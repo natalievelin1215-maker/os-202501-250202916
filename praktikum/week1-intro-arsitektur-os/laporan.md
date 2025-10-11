@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik:Arsitektur Sistem Operasi dan Kernel
 
 ---
 
@@ -14,25 +14,16 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ## Tujuan
 Tuliskan tujuan praktikum minggu ini.  
 Contoh:  
-Fungsi Utama Sistem Operasi
-
-Sistem operasi (Operating System / OS) adalah perangkat lunak sistem yang menjadi penghubung antara perangkat keras (hardware) dan perangkat lunak (software). Fungsi utamanya adalah:
-
-1.Manajemen Proses (Process Management):
-Mengatur proses yang berjalan di sistem, seperti penjadwalan, pembuatan, dan penghentian proses.
-
+**Fungsi Utama Sistem**
+Sistem operasi atau Operating System s adalah perangkat lunak sistem yang menjadi penghubung perangkat keras dan perangkat lunim. Fungsinya yaitu: 1. Manajemen Proses; yaitu mengatur process yang ada di sistem, contoh: penjadwalan, pembuatan dan peghentian process.
 2.Manajemen Memori (Memory Management):
 Mengatur penggunaan memori utama (RAM), menentukan alokasi memori untuk proses yang berjalan.
-
 3.Manajemen Penyimpanan (File System Management):
 Mengatur penyimpanan data dalam file dan folder serta akses terhadapnya di media penyimpanan (HDD/SSD).
-
 4.Manajemen Perangkat I/O (Device Management):
 Mengelola komunikasi antara sistem dan perangkat input/output seperti keyboard, mouse, printer, dll.
-
 5.Manajemen Keamanan dan Proteksi:
 Menjaga sistem dari akses yang tidak sah dan melindungi data serta sumber daya.
-
 6.User Interface:
 Memberikan antarmuka bagi pengguna, baik berbasis teks (CLI) maupun grafis (GUI).
 
@@ -50,12 +41,8 @@ Hybrid Kernel: Kombinasi keduanya (contoh: Windows, macOS).
 
 **Peran System Call**
 
-System Call adalah jembatan antara program aplikasi dan kernel. Karena aplikasi tidak bisa langsung mengakses perangkat keras (demi keamanan dan stabilitas), mereka menggunakan system call untuk:
-Mengakses file (baca, tulis, buka, tutup).
-Membuat dan mengelola proses.
-Mengalokasikan dan membebaskan memori.
-Berkomunikasi dengan perangkat I/O.
-System call merupakan API (Application Programming Interface) tingkat rendah yang disediakan oleh OS untuk dipanggil oleh aplikasi.
+System Call merupakan jembatan yang menghubungkan aplikasi dan kernel. Demi keamanan dan stabilitas, aplikasi tidak bisa langsung mengakses hardware. Melalui System Call, aplikasi dapat: Mengakses file (membaca, menulis, membuka, dan menutup). Mem-proses dan mengelola pembuatan proses. Mengalokasikan dan menghapus memori. Berkomunikasi dengan perangkat input/output. System Call adalah API (Application Programming Interface) tingkat dasar yang disiapkan oleh OS dan bisa diakses aplikasi.
+
 
 Contoh Ilustrasi:
 aplikasi ingin mencetak dokumen
@@ -66,11 +53,11 @@ Kernel mengatur komunikasi dengan perangkat printer
 
 ## Dasar Teori
 **Teori yang Mendasari Percobaan Sistem Operasi**
-**1. Sistem operasi adalah perangkat lunak inti yang mengelola sumber daya komputer**
-Sistem operasi bertugas mengatur penggunaan memori, proses, perangkat keras, dan perangkat lunak agar dapat berjalan secara efisien dan terkoordinasi 
-**2. Kernel sebagai komponen utama sistem operasi**
+**1.Sistem operasi adalah perangkat lunak inti yang mengelola sumber daya komputer**
+Sistem operasi bertugas mengatur penggunaan memori,proses,perangkat keras,dan perangkat lunak agar dapat berjalan secara efisien dan terkoordinasi 
+**2.Kernel sebagai komponen utama sistem operasi**
 Kernel mengontrol akses ke perangkat keras dan menjalankan proses, menjadi penghubung antara aplikasi dan hardware.
-**3.** System call sebagai mekanisme interaksi antara aplikasi dan kernel
+**3.System call sebagai mekanisme interaksi antara aplikasi dan kernel**
 System call memungkinkan program pengguna untuk meminta layanan dari kernel, seperti akses file, manajemen proses, dan komunikasi antar proses.
 **4.manajemen proses dan sinkronisasi**
 Sistem operasi mengelola eksekusi beberapa proses secara bersamaan dan menangani kondisi seperti race condition untuk menghindari konflik akses sumber daya.
@@ -165,29 +152,25 @@ Dalam Monolithic OS (seperti Linux), semua fungsi (I/O, file system, dll) dijala
 ---
 
 ## Kesimpulan
-Kernel Linux berfungsi sebagai inti sistem operasi yang mengatur komunikasi antara perangkat keras dan perangkat lunak. Perintah seperti uname, lsmod, dan dmesg digunakan untuk melihat informasi kernel, modul yang aktif, serta proses inisialisasi sistem.
-
-Lingkungan WSL2 (Windows Subsystem for Linux 2) memungkinkan kernel Linux asli dijalankan di atas sistem Windows melalui virtualisasi. Dengan demikian, pengguna dapat menjalankan perintah dan fungsi Linux tanpa meninggalkan sistem Windows.
-
-Perbedaan utama antara Linux asli dan WSL2 terletak pada akses terhadap perangkat keras — Linux asli berinteraksi langsung dengan hardware, sedangkan WSL2 menggunakan lapisan virtualisasi yang disediakan oleh Windows.
-
----
+Kernel Linux adalah bagian terpenting dari sistem operasi yang mengkoordinasikan kerja antara perangkat keras dan perangkat lunak. Ada beberapa cara untuk memeriksa informasi kernel menggunakan perintah spesifik seperti uname,lsmod,dmesg,dan untuk memastikan bahwa modul tidak dinonaktifkan oleh sistem.Dalam lingkungan WSL2,kernel Linux asli dieksekusi di atas sistem operasi Windows,yang tercapai melalui virtualisasi.Ini memungkinkan Anda untuk menjalankan perangkat dan fungsi Linux tanpa meninggalkan sistem operasi Windows.Perbedaan utama adalah bahwa dalam versi ini,Linux tidak diizinkan mengakses perangkat keras,menetapkan tugas-tugas ini ke virtualisasi layer yang disediakan oleh Windows.
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Sebutkan tiga fungsi utama sistem operasi.]  
+   **Jawaban:Manajemen Sumber Daya, Manajemen Proses dan File, serta Penyediaan Antarmuka Pengguna.**  
+2. [Jelaskan perbedaan antara kernel mode dan user mode.]  
+   **Jawaban:Perbedaan utama antara mode kernel dan mode pengguna adalah tingkat akses sumber daya. Mode kernel memberikan akses penuh ke perangkat keras dan memori sistem, di mana inti sistem operasi beroperasi, sedangkan mode pengguna menjalankan aplikasi dengan akses terbatas, hanya dapat meminta sumber daya melalui API sistem untuk menjaga keamanan dan stabilitas.**  
+3. [Sebutkan contoh OS dengan arsitektur monolithic dan microkernel.]  
+   **Jawaban:Monolithic Kernel:Linux, MS-DOS, Unix tradisional
+   MicrokernelMinix, QNX, macOS (XNU hybrid), Mach kernel**  
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
-
+- BagaimUana cara Anda mengatasinya?
+1.Terkendala saat login akun git dan bingung pada tugas sistem opersai
+2.dengan cara menanyakan kakak tingkat yang saya kenal di universitas putra bangsa  
 ---
 
 **Credit:**  
