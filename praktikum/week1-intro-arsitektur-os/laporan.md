@@ -15,7 +15,7 @@ Topik:Arsitektur Sistem Operasi dan Kernel
 Tuliskan tujuan praktikum minggu ini.  
 Contoh:  
 **Fungsi Utama Sistem**
-Sistem operasi atau Operating System s adalah perangkat lunak sistem yang menjadi penghubung perangkat keras dan perangkat lunim. Fungsinya yaitu: 1. Manajemen Proses; yaitu mengatur process yang ada di sistem, contoh: penjadwalan, pembuatan dan peghentian process.
+Sistem operasi atau operating system adalah perangkat lunak sistem yang menjadi penghubung perangkat keras dan perangkat lunak. Fungsinya yaitu: 1. Manajemen Proses; yaitu mengatur process yang ada di sistem, contoh: penjadwalan, pembuatan dan peghentian process.
 2.Manajemen Memori (Memory Management):
 Mengatur penggunaan memori utama (RAM), menentukan alokasi memori untuk proses yang berjalan.
 3.Manajemen Penyimpanan (File System Management):
@@ -25,7 +25,7 @@ Mengelola komunikasi antara sistem dan perangkat input/output seperti keyboard, 
 5.Manajemen Keamanan dan Proteksi:
 Menjaga sistem dari akses yang tidak sah dan melindungi data serta sumber daya.
 6.User Interface:
-Memberikan antarmuka bagi pengguna, baik berbasis teks (CLI) maupun grafis (GUI).
+Memberikan antarmuka bagi pengguna,baik berbasis teks maupun grafis.
 
 **Peran Kernel:**
 Kernel adalah inti dari sistem operasi yang langsung berinteraksi dengan perangkat keras. Tugas utama kernel meliputi:
