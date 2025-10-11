@@ -5,21 +5,77 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  :  Evelin Natalie
+- **NIM**   :  250202916
+- **Kelas** : 1IKRA 
 
 ---
 
 ## Tujuan
 Tuliskan tujuan praktikum minggu ini.  
 Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Fungsi Utama Sistem Operasi
 
----
+Sistem operasi (Operating System / OS) adalah perangkat lunak sistem yang menjadi penghubung antara perangkat keras (hardware) dan perangkat lunak (software). Fungsi utamanya adalah:
+
+1.Manajemen Proses (Process Management):
+Mengatur proses yang berjalan di sistem, seperti penjadwalan, pembuatan, dan penghentian proses.
+
+2.Manajemen Memori (Memory Management):
+Mengatur penggunaan memori utama (RAM), menentukan alokasi memori untuk proses yang berjalan.
+
+3.Manajemen Penyimpanan (File System Management):
+Mengatur penyimpanan data dalam file dan folder serta akses terhadapnya di media penyimpanan (HDD/SSD).
+
+4.Manajemen Perangkat I/O (Device Management):
+Mengelola komunikasi antara sistem dan perangkat input/output seperti keyboard, mouse, printer, dll.
+
+5.Manajemen Keamanan dan Proteksi:
+Menjaga sistem dari akses yang tidak sah dan melindungi data serta sumber daya.
+
+6.User Interface:
+Memberikan antarmuka bagi pengguna, baik berbasis teks (CLI) maupun grafis (GUI).
+
+**Peran Kernel:**
+Kernel adalah inti dari sistem operasi yang langsung berinteraksi dengan perangkat keras. Tugas utama kernel meliputi:
+Mengelola sumber daya sistem (CPU, memori, perangkat I/O).
+Menjalankan dan menjadwalkan proses.
+Menangani interrupt dan sistem call.
+Memberikan abstraksi perangkat keras agar program aplikasi bisa berjalan tanpa harus memahami cara kerja perangkat keras.
+
+**Jenis Kernel**
+Monolithic Kernel: Semua fungsi berada dalam satu program besar (contoh: Linux).
+Microkernel: Hanya fungsi dasar, sisanya berjalan di user space (contoh: Minix, QNX).
+Hybrid Kernel: Kombinasi keduanya (contoh: Windows, macOS).
+
+**Peran System Call**
+
+System Call adalah jembatan antara program aplikasi dan kernel. Karena aplikasi tidak bisa langsung mengakses perangkat keras (demi keamanan dan stabilitas), mereka menggunakan system call untuk:
+Mengakses file (baca, tulis, buka, tutup).
+Membuat dan mengelola proses.
+Mengalokasikan dan membebaskan memori.
+Berkomunikasi dengan perangkat I/O.
+System call merupakan API (Application Programming Interface) tingkat rendah yang disediakan oleh OS untuk dipanggil oleh aplikasi.
+
+Contoh Ilustrasi:
+aplikasi ingin mencetak dokumen
+Aplikasi tidak langsung mengakses printer.
+Aplikasi melakukan system call ke kernel.
+Kernel mengatur komunikasi dengan perangkat printer
+-
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+**Teori yang Mendasari Percobaan Sistem Operasi**
+**1. Sistem operasi adalah perangkat lunak inti yang mengelola sumber daya komputer**
+Sistem operasi bertugas mengatur penggunaan memori, proses, perangkat keras, dan perangkat lunak agar dapat berjalan secara efisien dan terkoordinasi 
+**2. Kernel sebagai komponen utama sistem operasi**
+Kernel mengontrol akses ke perangkat keras dan menjalankan proses, menjadi penghubung antara aplikasi dan hardware.
+**3.** System call sebagai mekanisme interaksi antara aplikasi dan kernel
+System call memungkinkan program pengguna untuk meminta layanan dari kernel, seperti akses file, manajemen proses, dan komunikasi antar proses.
+**4.manajemen proses dan sinkronisasi**
+Sistem operasi mengelola eksekusi beberapa proses secara bersamaan dan menangani kondisi seperti race condition untuk menghindari konflik akses sumber daya.
+**5.Pengendalian input/output dan penyimpanan**
+Sistem operasi mengatur perangkat input/output dan penyimpanan data agar aplikasi dapat menggunakan perangkat tersebut tanpa harus berinteraksi langsung dengan hardware.
 
 ---
 
@@ -52,11 +108,68 @@ Sertakan screenshot hasil percobaan atau diagram:
 - Jelaskan makna hasil percobaan.  
 - Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
 - Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+jawab:
+a. Perintah uname -a
+Linux DESKTOP-C9IVJP5 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+Makna:
+Linux → Kernel yang digunakan.
+DESKTOP-C9IVJP5 → Hostname sistem.
+6.6.87.2-microsoft-standard-WSL2 → Versi kernel yang dimodifikasi oleh Microsoft untuk WSL2.
+x86_64 → Arsitektur 64-bit.
+GNU/Linux → Sistem berbasis kernel Linux dan tool GNU.
+Kesimpulan:
+Lingkungan ini bukan Linux asli, melainkan WSL2 (Windows Subsystem for Linux versi 2), yaitu lapisan virtualisasi ringan di Windows yang menjalankan kernel Linux.
+
+b. Perintah whoami
+evelin
+Menunjukkan nama user Linux aktif di shell WSL2.
+c. Perintah lsmod | head
+Module                  Size  Used by
+tls                    98304  0
+intel_rapl_msr          16384  0
+intel_rapl_common       32768  1 intel_rapl_msr
+...
+Makna:
+Menampilkan modul kernel (kernel modules) yang sedang dimuat di memori.
+Modul kernel = kode tambahan yang dapat dimuat/dilepas dinamis untuk memperluas kemampuan kernel (contoh: driver, filesystem, protokol jaringan).
+
+d. Perintah dmesg | head
+[    0.000000] Linux version 6.6.87.2-microsoft-standard-WSL2 ...
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+...
+Makna:
+dmesg menampilkan pesan kernel ring buffer, yaitu log awal boot yang berisi informasi inisialisasi kernel.
+Baris awal memperlihatkan:
+Versi kernel.
+CPU yang didukung.
+Pemetaan RAM fisik.
+Komponen BIOS.
+Ini menandakan kernel sedang melakukan inisialisasi perangkat keras virtual, termasuk memori dan CPU virtual di bawah WSL2.
+
+2.Hubungkan Hasil dengan Teori (Kernel, System Call, Arsitektur OS)
+Fungsi Kernel
+Kernel bertanggung jawab langsung atas pengelolaan sumber daya sistem, seperti CPU, memori, file system, dan perangkat I/O.
+Dalam percobaan, saat proses dijalankan dan melakukan operasi (misalnya menulis ke file), kernel yang mengatur dan menjadwalkan operasi tersebut.
+
+System Call
+System call adalah interface antara aplikasi dan kernel.
+Hasil percobaan menunjukkan bahwa tanpa system call, aplikasi tidak dapat berinteraksi dengan hardware secara langsung.
+Misalnya, pemanggilan write() di Linux adalah system call untuk mencetak ke layar. Proses ini terlihat dalam tool seperti strace, yang menunjukkan system call mana yang digunakan.
+
+Arsitektur OS
+Dalam Monolithic OS (seperti Linux), semua fungsi (I/O, file system, dll) dijalankan dalam ruang kernel. System call berlangsung lebih cepat, tapi potensi crash lebih tinggi jika ada bug.
+
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+Kernel Linux berfungsi sebagai inti sistem operasi yang mengatur komunikasi antara perangkat keras dan perangkat lunak. Perintah seperti uname, lsmod, dan dmesg digunakan untuk melihat informasi kernel, modul yang aktif, serta proses inisialisasi sistem.
+
+Lingkungan WSL2 (Windows Subsystem for Linux 2) memungkinkan kernel Linux asli dijalankan di atas sistem Windows melalui virtualisasi. Dengan demikian, pengguna dapat menjalankan perintah dan fungsi Linux tanpa meninggalkan sistem Windows.
+
+Perbedaan utama antara Linux asli dan WSL2 terletak pada akses terhadap perangkat keras — Linux asli berinteraksi langsung dengan hardware, sedangkan WSL2 menggunakan lapisan virtualisasi yang disediakan oleh Windows.
 
 ---
 
