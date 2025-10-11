@@ -148,6 +148,18 @@ Misalnya, pemanggilan write() di Linux adalah system call untuk mencetak ke laya
 Arsitektur OS
 Dalam Monolithic OS (seperti Linux), semua fungsi (I/O, file system, dll) dijalankan dalam ruang kernel. System call berlangsung lebih cepat, tapi potensi crash lebih tinggi jika ada bug.
 
+3.1. Lingkungan Linux Asli
+Linux menjalankan kernel Linux murni, sehingga perintah seperti:
+uname -a → Menampilkan versi kernel Linux distro (misal Ubuntu/Fedora).
+lsmod → Menunjukkan semua modul kernel (driver hardware, filesystem, protokol jaringan).
+dmesg → Menampilkan pesan kernel lengkap tentang proses booting, deteksi perangkat keras (CPU, RAM, USB, disk, jaringan).
+
+2.Lingkungan Windows
+Windows tidak menggunakan kernel Linux,melainkan Windows NT kernel.Maka,perintah seperti uname,lsmod,dan dmesg tidak dikenali di Command Prompt atau PowerShell.Sebagai gantinya,Windows menggunakan alat lain seperti:
+systeminfo → Menampilkan versi OS dan spesifikasi sistem.
+driverquery → Menampilkan driver perangkat keras.
+Event Viewer → Menampilkan log sistem (mirip fungsi dmesg).
+
 
 ---
 
