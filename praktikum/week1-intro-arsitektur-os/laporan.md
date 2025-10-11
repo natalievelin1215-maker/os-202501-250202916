@@ -43,7 +43,8 @@ dmesg | head
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+
+<img width="1366" height="762" alt="Capture" src="https://github.com/user-attachments/assets/292acb1d-fdb0-4c05-8bd5-328b794050e3" />
 
 ---
 
