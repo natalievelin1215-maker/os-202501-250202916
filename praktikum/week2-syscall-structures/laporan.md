@@ -15,30 +15,31 @@ Topik: system call
 Tuliskan tujuan praktikum minggu ini.  
 Contoh:  
 > Setelah menyelesaikan tugas ini, mahasiswa mampu:
-1.Menjelaskan konsep dan fungsi system call dalam sistem operasi.
-2.Mengidentifikasi jenis-jenis system call dan fungsinya.
-3.Mengamati alur perpindahan mode user ke kernel saat system call terjadi.
-4.Menggunakan perintah Linux untuk menampilkan dan menganalisis system call.
-JAWAB:
-1.Konsep system call adalah jembatan antara program pengguna (user mode) dan kernel (kernel mode) dalam sistem operasi, yang memungkinkan aplikasi untuk meminta layanan dari sistem operasi.Permintaan ini, seperti membuka atau membaca file, diperlukan karena aplikasi tidak memiliki akses langsung ke perangkat keras dan sumber daya sistem, yang hanya dapat dikelola oleh kernel. Dengan demikian, system call bertindak sebagai antarmuka yang aman bagi program untuk berinteraksi dengan kernel dan menjalankan instruksi istimewa.
+1. Menjelaskan konsep dan fungsi system call dalam sistem operasi.
+2. Mengidentifikasi jenis-jenis system call dan fungsinya.
+3. Mengamati alur perpindahan mode user ke kernel saat system call terjadi.
+4. Menggunakan perintah Linux untuk menampilkan dan menganalisis system call.
+>JAWAB:
+1. Konsep system call adalah jembatan antara program pengguna (user mode) dan kernel (kernel mode) dalam sistem operasi, yang memungkinkan aplikasi untuk meminta layanan dari sistem operasi.Permintaan ini, seperti membuka atau membaca file, diperlukan karena aplikasi tidak memiliki akses langsung ke perangkat keras dan sumber daya sistem, yang hanya dapat dikelola oleh kernel. Dengan demikian, system call bertindak sebagai antarmuka yang aman bagi program untuk berinteraksi dengan kernel dan menjalankan instruksi istimewa.
 Fungsi system call yaitu:
--Manajemen Proses
--Manajemen File
--Manajemen Perangkatlainnya dengan cara yang aman dan terstruktur. 
--Komunikasi
--Pemeliharaan Informasi
-2.Jenis-jenis system call yaitu
- kontrol proses:Mengelola eksekusi proses, termasuk pembuatan, terminasi, dan koordinasi antar-proses.
- manajemen berkas:Melakukan operasi pada berkas seperti membuat, menghapus, membuka, membaca, dan menulis. 
- manajemen perangkat:Mengelola perangkat keras seperti printer, scanner, atau jaringan. 
- pemeliharaan informasi:Mengambil dan mengatur informasi tentang sistem atau proses. 
- komunikasi:Memungkinkan pertukaran informasi antara proses yang berbeda
-3.Alur perpindahan dari mode pengguna ke mode kernel saat system call terjadi karena serangkaian langkah yang dipicu oleh instruksi khusus. Pustaka C atau kode aplikasi akan memuat nomor system call dan parameternya ke dalam register, lalu memicu perpindahan mode melalui trap atau interupsi perangkat lunak
-4.Penrintah Linux untuk menampilkan adalah strce .perintah ini juga berfungsi untuk menganalisis system call
+- Manajemen Proses
+- Manajemen File
+- Manajemen Perangkatlainnya dengan cara yang aman dan terstruktur. 
+- Komunikasi
+- Pemeliharaan Informasi
+2. Jenis-jenis system call yaitu
+- kontrol proses:Mengelola eksekusi proses, termasuk pembuatan, terminasi, dan koordinasi antar-proses.
+- manajemen berkas:Melakukan operasi pada berkas seperti membuat, menghapus, membuka, membaca, dan menulis. 
+- manajemen perangkat:Mengelola perangkat keras seperti printer, scanner, atau jaringan. 
+- pemeliharaan informasi:Mengambil dan mengatur informasi tentang sistem atau proses. 
+- komunikasi:Memungkinkan pertukaran informasi antara proses yang berbeda
+3. Alur perpindahan dari mode pengguna ke mode kernel saat system call terjadi karena serangkaian langkah yang dipicu oleh instruksi khusus. Pustaka C atau kode aplikasi akan memuat nomor system call dan parameternya ke dalam register, lalu memicu perpindahan mode melalui trap atau interupsi perangkat lunak
+4. Penrintah Linux untuk menampilkan adalah strce .perintah ini juga berfungsi untuk menganalisis system call
 ---
 
 ## Dasar Teori
 Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+System Call sebagai Antarmuka antara Program dan Kernel.Teori ini menjelaskan bahwa system call adalah cara utama program di mode pengguna berinteraksi dengan kernel OS untuk meminta layanan, seperti akses hardware atau manajemen memori. Dasarnya adalah prinsip abstraksi, di mana OS menyembunyikan kompleksitas internal untuk memudahkan pengembangan perangkat lunak tanpa mengganggu keamanan keseluruhan sistem.
 
 ---
 
@@ -79,11 +80,11 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 
 ## Quiz
 1. Apa fungsi utama system call dalam sistem operasi?  
-   **Jawaban:**  
+   **Jawaban:**  fungsi utama system call adalah sebagai antarmuka atau jembatan bagi program aplikasi untuk meminta layanan dari sistem operasi (OS) 
 2. Sebutkan 4 kategori system call yang umum digunakan? 
-   **Jawaban:**  
-3.Mengapa system call tidak bisa dipanggil langsung oleh user program?
-   **Jawaban:**  
+   **Jawaban:**  kategori system call yang umum digunakan adalah Manajemen Proses, Manajemen Berkas, Manajemen Perangkat, dan Komunikasi
+3. Mengapa system call tidak bisa dipanggil langsung oleh user program?
+   **Jawaban:**  karena program pengguna berjalan di "user mode", sementara system call hanya bisa dijalankan di "kernel mode" yang lebih aman dan memiliki hak akses istimewa untuk berinteraksi langsung dengan perangkat keras dan memori.
 
 ---
 
