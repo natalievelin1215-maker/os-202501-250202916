@@ -108,8 +108,8 @@ Secara keseluruhan, praktikum system call menunjukkan bahwa konsep ini bukan han
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?  ada kendaladi wsl 
+- Bagaimana cara Anda mengatasinya?  dengan cara mencari tutorial di media sosial
 
 ---
 
