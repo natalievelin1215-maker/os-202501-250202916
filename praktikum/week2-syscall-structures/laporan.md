@@ -70,6 +70,16 @@ Sertakan screenshot hasil percobaan atau diagram:
 ## Analisis
 - Analisis bagaimana file dibuka, dibaca, dan ditutup oleh kernel
 - Amati log kernel yang muncul. Apa bedanya output ini dengan output dari program biasa?
+> JAWAB
+- Analisis System Call untuk Operasi File
+Proses Pembukaan File (Open Operations):
+System call seperti openat digunakan untuk membuka file atau sumber daya, seperti /etc/ld.so.cache atau /lib/x86_64-linux-gnu/libselinux.so.1. Dalam output, kernel memeriksa akses (misalnya, dengan flag O_RDONLY|O_CLOEXEC) untuk memastikan file dapat dibaca tanpa modifikasi. Ini mencerminkan teori isolasi, di mana kernel memvalidasi izin pengguna sebelum memberikan akses, mencegah potensi serangan seperti akses tidak sah. Contohnya, openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 mengembalikan file descriptor (3), yang menunjukkan file berhasil dibuka dan siap untuk operasi selanjutnya.
+
+- Proses Pembacaan File (Read Operations):
+System call read memungkinkan program untuk membaca isi file, seperti saat membaca dari /proc/mounts atau library dinamis. Dalam output, Anda melihat read(3, "...", 1024) = 1024, di mana kernel membaca data dari file descriptor 3 (dari openat sebelumnya). Ini mengilustrasikan validasi input, di mana kernel memastikan ukuran baca tidak melebihi batas dan data aman untuk diproses, sesuai dengan prinsip keamanan system call yang mencegah buffer overflow atau korupsi memori.
+
+- Proses Penutupan File (Close Operations):
+System call close digunakan untuk menutup file descriptor setelah operasi selesai, seperti close(3) = 0 setelah membaca file. Ini penting untuk membebaskan sumber daya sistem, mencegah kebocoran memori atau descriptor yang terbuka terlalu lama. Dalam konteks teori, ini menunjukkan efisiensi system call, di mana kernel mengelola transisi balik ke mode user dengan aman, memastikan sumber daya seperti file descriptor tidak tersisa dan berpotensi dieksploitasi.
 
 ---
 
