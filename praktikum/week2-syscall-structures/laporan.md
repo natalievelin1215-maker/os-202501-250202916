@@ -38,8 +38,8 @@ Fungsi system call yaitu:
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
-System Call sebagai Antarmuka antara Program dan Kernel.Teori ini menjelaskan bahwa system call adalah cara utama program di mode pengguna berinteraksi dengan kernel OS untuk meminta layanan, seperti akses hardware atau manajemen memori. Dasarnya adalah prinsip abstraksi, di mana OS menyembunyikan kompleksitas internal untuk memudahkan pengembangan perangkat lunak tanpa mengganggu keamanan keseluruhan sistem.
+Tuliskan ringkasan teori (3–5 poin) yang mendasari system call.
+- System Call sebagai Antarmuka antara Program dan Kernel.Teori ini menjelaskan bahwa system call adalah cara utama program di mode pengguna berinteraksi dengan kernel OS untuk meminta layanan, seperti akses hardware atau manajemen memori. Dasarnya adalah prinsip abstraksi, di mana OS menyembunyikan kompleksitas internal untuk memudahkan pengembangan perangkat lunak tanpa mengganggu keamanan keseluruhan sistem.
 
 ---
 
@@ -75,6 +75,14 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+- System Call adalah Pilar Keamanan dan Interaksi OS:
+Dari praktikum, terlihat bahwa system call memainkan peran kunci dalam menjaga isolasi antara program pengguna dan kernel, sehingga mencegah serangan keamanan seperti akses tidak sah. Kesimpulannya, penggunaan system call dalam percobaan menunjukkan betapa pentingnya mekanisme ini untuk stabilitas OS, di mana setiap panggilan divalidasi untuk memastikan operasi yang aman dan terkendali.
+
+- Efisiensi dan Penerapan Praktis dalam Pengembangan:
+Praktikum mengilustrasikan bahwa system call seperti read(), write(), atau fork() di Linux memungkinkan interaksi efisien dengan hardware, tetapi juga menyoroti tantangan seperti overhead transisi mode. Kesimpulan ini menekankan bahwa memahami system call membantu dalam mengoptimalkan kinerja aplikasi, serta mendorong praktik pengkodean yang lebih aman dalam pengembangan perangkat lunak.
+
+- Implikasi untuk Pembelajaran dan Inovasi:
+Secara keseluruhan, praktikum system call menunjukkan bahwa konsep ini bukan hanya teori, tetapi juga alat praktis untuk eksperimen keamanan OS. Kesimpulannya, hal ini mendorong inovasi dalam desain sistem, di mana pemahaman tentang validasi input dan transisi aman dapat diterapkan untuk mengembangkan OS yang lebih tangguh terhadap ancaman masa depan.
 
 ---
 
