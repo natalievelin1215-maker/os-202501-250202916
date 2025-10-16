@@ -70,8 +70,11 @@ dmesg | tail -n 10
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
+Sertakan screenshot hasil system call
 <img width="1352" height="728" alt="Sytem Call" src="https://github.com/user-attachments/assets/64835ff4-4cd7-47cf-8adf-4e9dc40ee15d" />
+<img width="1366" height="768" alt="Capture 4" src="https://github.com/user-attachments/assets/95268416-3d24-4748-80be-e9759c12dca8" />
+
+<img width="1366" height="768" alt="Capture3" src="https://github.com/user-attachments/assets/6b3cbe04-b700-450d-ade0-301b48bd726c" />
 
 ---
 
