@@ -1,5 +1,5 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu [2]
 Topik: system call
 
 ---
@@ -40,6 +40,14 @@ Fungsi system call yaitu:
 ## Dasar Teori
 Tuliskan ringkasan teori (3–5 poin) yang mendasari system call.
 - System Call sebagai Antarmuka antara Program dan Kernel.Teori ini menjelaskan bahwa system call adalah cara utama program di mode pengguna berinteraksi dengan kernel OS untuk meminta layanan, seperti akses hardware atau manajemen memori. Dasarnya adalah prinsip abstraksi, di mana OS menyembunyikan kompleksitas internal untuk memudahkan pengembangan perangkat lunak tanpa mengganggu keamanan keseluruhan sistem.
+- Antarmuka Terkendali dan Abstraksi (Controlled Interface and Abstraction): System call menyediakan antarmuka terstandardisasi yang aman bagi program untuk mengakses layanan kernel.
+Abstraksi: Pengembang aplikasi tidak perlu memahami detail teknis yang rumit tentang cara kerja perangkat keras (misalnya, mengakses hard disk atau jaringan).
+- Antarmuka terkendali: Setiap permintaan akan melewati "gerbang" yang dikendalikan oleh kernel. Hal ini mencegah program berbahaya atau yang salah menulis kode untuk merusak sistem dengan langsung mengakses sumber daya penting.
+Transisi dari User Mode ke Kernel Mode: Perpindahan dari user mode ke kernel mode dipicu oleh sebuah software interrupt.
+Ketika sebuah program memanggil system call, ia menempatkan nomor system call dan parameter-parameternya ke dalam register CPU.
+CPU kemudian mengalihkan eksekusi ke kernel menggunakan mekanisme interrupt.
+Kernel memeriksa nomor system call, mengeksekusi layanan yang diminta, dan mengembalikan kontrol ke program pengguna setelah tugas selesai.
+
 
 ---
 
