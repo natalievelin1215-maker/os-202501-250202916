@@ -148,72 +148,16 @@ close(3)                                = 0
 close(1)                                = 0
 close(2)                                = 0
 exit_group(0)                           = ?
+
+- No	System Call	Fungsi Utama
+1	execve()	Menjalankan program baru. Di sini, /bin/ls dieksekusi sebagai proses baru, menggantikan proses strace. Ini adalah titik awal eksekusi ls.
+2	brk()	Mengatur batas ruang memori heap proses (digunakan untuk alokasi dinamis seperti malloc).
+3	arch_prctl()	Mengatur atau mengambil nilai register arsitektur khusus (tergantung CPU, biasanya digunakan untuk thread-local storage).
+4	mmap()	Memetakan file atau perangkat ke dalam memori. Biasanya digunakan untuk mengalokasikan memori baru atau memetakan file library.
+5	access()	Mengecek izin akses file, misalnya apakah /etc/ld.so.preload dapat dibaca (R_OK).
+6	openat()	Membuka file secara relatif terhadap direktori tertentu. Di sini, membuka /etc/ld.so.cache untuk membaca daftar library yang sudah di-cache.
+7	newfstatat()	Mengambil informasi metadata file (ukuran, mode, waktu modifikasi, dsb).
+8	mmap() (lagi)	Setelah membuka file, mmap() dipanggil lagi untuk memetakan isi file ke memori agar bisa diakses lebih cepat.
+9	close()	Menutup file descriptor (di sini, file /etc/ld.so.cache ditutup setelah dibaca).
+10	openat() (lagi)	Membuka library C standar (libc.so.6) yang dibutuhkan ls untuk menjalankan fungsi dasar.
 +++ exited with 0 +++
-evelin@DESKTOP-C9IVJP5:~$ strace -e trace=open,read,write,close cat /etc/passwd
-close(3)                                = 0
-read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\243\2\0\0\0\0\0"..., 832) = 832
-close(3)                                = 0
-read(3, "# Locale name alias data base.\n#"..., 4096) = 2996
-read(3, "", 4096)                       = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-close(3)                                = 0
-read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 131072) = 1426
-write(1, "root:x:0:0:root:/root:/bin/bash\n"..., 1426root:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/nologin
-sys:x:3:3:sys:/dev:/usr/sbin/nologin
-sync:x:4:65534:sync:/bin:/bin/sync
-games:x:5:60:games:/usr/games:/usr/sbin/nologin
-man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
-lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
-news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
-www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
-backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
-list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
-irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
-_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
-nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
-systemd-timesync:x:996:996:systemd Time Synchronization:/:/usr/sbin/nologin
-dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
-messagebus:x:101:101::/nonexistent:/usr/sbin/nologin
-syslog:x:102:102::/nonexistent:/usr/sbin/nologin
-systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
-uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
-landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
-polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
-evelin:x:1000:1000:,,,:/home/evelin:/bin/bash
-) = 1426
-read(3, "", 131072)                     = 0
-close(3)                                = 0
-close(1)                                = 0
-close(2)                                = 0
-+++ exited with 0 +++
-evelin@DESKTOP-C9IVJP5:~$
-evelin@DESKTOP-C9IVJP5:~$ dmesg | tail -n 10
-[   12.545397] Failed to connect to bus: No such file or directory
-[   12.812347] Failed to connect to bus: No such file or directory
-[   13.304718] systemd-journald[78]: Collecting audit messages is disabled.
-[   13.418023] systemd-journald[78]: Received client request to flush runtime journal.
-[   13.627441] systemd-journald[78]: File /var/log/journal/af9f201756fa478f80d3d0a0135e4939/system.journal corrupted or uncleanly shut down, renaming and replacing.
-[   14.637674] ACPI: battery: Slot [BAT1] (battery present)
-[   14.637689] ACPI: AC: AC Adapter [AC1] (on-line)
-[   18.039265] WSL (2 - init-systemd(Ubuntu)) ERROR: WaitForBootProcess:3393: /sbin/init failed to start within 10000ms
-[   33.410616] TCP: eth0: Driver has suspect GRO implementation, TCP performance may be compromised.
-[   48.630010] hv_balloon: Max. dynamic memory size: 4034 MB
