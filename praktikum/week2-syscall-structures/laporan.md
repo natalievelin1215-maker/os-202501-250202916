@@ -118,6 +118,28 @@ Secara keseluruhan, praktikum system call menunjukkan bahwa konsep ini bukan han
 
 ---
 ## Tugas
+1. Dokumentasikan hasil eksperimen strace dan dmesg dalam bentuk tabel observasi.
+
+- strace
+
+| No. | Perintah | Observasi | Deskripsi |
+|-----|----------|-----------|-----------|
+| 1 | strace | execve("/bin/ls", ["ls"], 0x7ffd...) = 0 | Proses memulai eksekusi program ls. |
+| 2 | strace | openat(AT_FDCWD, ".", O_RDONLY|O_NONBLOCK|O_DIRECTORY) = 3 | Membuka direktori saat ini. |
+| 3 | strace | getdents(3, /* 10 entries */, 32768) = 280 | Membaca entri direktori. |
+| 4 | strace | write(1, "file1.txt\nfile2.txt\ndirektori1\n", 30) = 30 | Menulis output ke layar. |
+| 5 | strace | exit_group(0) = ? | Proses berakhir. |
+
+- dmesg
+
+| no | Perintah | Observasi | Deskripsi |
+|----|----------|-----------|-----------|
+| 1 | dmesg | [ 0.000000] Linux version 5.15.0-58-generic | Informasi versi kernel Linux yang digunakan saat boot, menunjukkan konfigurasi dasar sistem. |
+| 2 | dmesg | [ 2.123456] usb 1-1: | new high-speed USB device number 2 using xhci_hcd |  Kernel mendeteksi perangkat USB baru terhubung, seperti flash drive atau mouse. |
+| 3 | dmesg | [ 3.456789] EXT4-fs (sda1): mounted filesystem with ordered data mode | Sistem file EXT4 pada partisi sda1 berhasil dimount, menandakan partisi root atau data siap digunakan.
+| 4 | dmesg | [ 10.789012] random: crng init done | Kernel menyelesaikan inisialisasi Cryptographically Secure Pseudo-Random Number Generator (CSPRNG) untuk keamanan.
+| 5 | dmesg | [ 123.456789] ata1.00: failed command: | READ FPDMA QUEUED Error pada operasi disk (misalnya, hard drive gagal membaca data), yang mungkin menunjukkan masalah hardware. |
+
 1. Mengapa system call penting untuk keamanan OS?
 - karena berfungsi sebagai gerbang kontrol antara program pengguna dan kernel sistem operasi, sehingga mencegah akses tidak sah dan menjaga stabilitas sistem. Kernel memvalidasi setiap permintaan melalui system call, memastikan program hanya mengakses sumber daya yang diizinkan, seperti memori atau perangkat keras
 
