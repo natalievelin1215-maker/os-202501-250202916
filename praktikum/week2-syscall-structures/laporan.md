@@ -140,6 +140,11 @@ Secara keseluruhan, praktikum system call menunjukkan bahwa konsep ini bukan han
 | 4 | dmesg | [ 10.789012] random: crng init done | Kernel menyelesaikan inisialisasi Cryptographically Secure Pseudo-Random Number Generator (CSPRNG) untuk keamanan.
 | 5 | dmesg | [ 123.456789] ata1.00: failed command: | READ FPDMA QUEUED Error pada operasi disk (misalnya, hard drive gagal membaca data), yang mungkin menunjukkan masalah hardware. |
 
+2. Buat diagram alur system call dari aplikasi → kernel → hardware → kembali ke aplikasi.
+
+![WhatsApp Image 2025-10-17 at 4 59 59 AM](https://github.com/user-attachments/assets/fabc2ca5-7c9b-49b8-a76a-4c5553617403)
+
+
 1. Mengapa system call penting untuk keamanan OS?
 - karena berfungsi sebagai gerbang kontrol antara program pengguna dan kernel sistem operasi, sehingga mencegah akses tidak sah dan menjaga stabilitas sistem. Kernel memvalidasi setiap permintaan melalui system call, memastikan program hanya mengakses sumber daya yang diizinkan, seperti memori atau perangkat keras
 
