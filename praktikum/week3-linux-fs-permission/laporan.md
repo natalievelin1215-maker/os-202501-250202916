@@ -135,7 +135,8 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ## Tugas
 1. Dokumentasikan hasil seluruh perintah pada tabel observasi di laporan.md.
 2. Jelaskan fungsi tiap perintah dan arti kolom permission (rwxr-xr--).
-3. Upload hasil dan laporan ke repositori Git sebelum deadline.
+3. Analisis peran chmod dan chown dalam keamanan sistem Linux.
+4. Upload hasil dan laporan ke repositori Git sebelum deadline.
 
 **JAWAB**
 1. 
@@ -148,7 +149,10 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 | 4 | ls -a | . .. .X11-unix snap-private-tmp systemd-private-... | . adalah direktori saat ini, .. direktori induk, dan lainnya adalah file/folder sistem (termasuk yang tersembunyi). |
 
 
-
+2. -	Jenis file	- = file biasa, d = direktori, l = link.
+- rwx	Hak untuk user (pemilik)	r = read, w = write, x = execute. Pemilik bisa membaca, menulis, dan menjalankan file.
+- r-x	Hak untuk group	r = read, - = tidak bisa menulis, x = bisa menjalankan. Anggota grup bisa membaca & menjalankan tapi tidak mengedit.
+- r--	Hak untuk others (pengguna lain)	r = read, -- = tidak bisa menulis atau menjalankan. Pengguna lain hanya bisa membaca file.
 
 
 ## Quiz
