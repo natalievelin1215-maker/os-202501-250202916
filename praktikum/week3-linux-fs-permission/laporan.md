@@ -80,6 +80,7 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
+<img width="1366" height="766" alt="week3 sistem operasi" src="https://github.com/user-attachments/assets/1ff18f32-4a09-4b2d-959e-086fc04bece2" />
 
 ---
 
