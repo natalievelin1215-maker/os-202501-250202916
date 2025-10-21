@@ -135,8 +135,19 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ## Tugas
 1. Dokumentasikan hasil seluruh perintah pada tabel observasi di laporan.md.
 2. Jelaskan fungsi tiap perintah dan arti kolom permission (rwxr-xr--).
-3.cc
-4. Upload hasil dan laporan ke repositori Git sebelum deadline.
+3. Upload hasil dan laporan ke repositori Git sebelum deadline.
+
+**JAWAB**
+1. 
+
+| NO | Perintah | Hasil / Output | Keterangan |
+| -- | -------- | -------------- | ---------- |
+| 1 | pwd | /home/evelin | Menunjukkan posisi pengguna saat ini di sistem file, yaitu di direktori home milik user evelin. |
+| 2 | ls -l | total 0 | Direktori /home/evelin kosong, tidak ada file maupun folder di dalamnya. |
+| 3 | cd /tmp | (tidak ada output) | Mengganti lokasi kerja aktif menjadi /tmp, tempat file sementara sistem disimpan. |
+| 4 | ls -a | . .. .X11-unix snap-private-tmp systemd-private-... | . adalah direktori saat ini, .. direktori induk, dan lainnya adalah file/folder sistem (termasuk yang tersembunyi). |
+
+
 
 
 
