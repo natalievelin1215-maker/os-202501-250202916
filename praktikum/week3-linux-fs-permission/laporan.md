@@ -141,12 +141,22 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 **JAWAB**
 1. 
 
-| NO | Perintah | Hasil / Output | Keterangan |
-| -- | -------- | -------------- | ---------- |
-| 1 | pwd | /home/evelin | Menunjukkan posisi pengguna saat ini di sistem file, yaitu di direktori home milik user evelin. |
-| 2 | ls -l | total 0 | Direktori /home/evelin kosong, tidak ada file maupun folder di dalamnya. |
-| 3 | cd /tmp | (tidak ada output) | Mengganti lokasi kerja aktif menjadi /tmp, tempat file sementara sistem disimpan. |
-| 4 | ls -a | . .. .X11-unix snap-private-tmp systemd-private-... | . adalah direktori saat ini, .. direktori induk, dan lainnya adalah file/folder sistem (termasuk yang tersembunyi). |
+
+
+| **No.** | **Perintah** | **Fungsi / Tujuan Perintah** | **Hasil / Output** | **Keterangan** |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | `pwd` | Menampilkan direktori kerja saat ini | `/home/evelin` | Menunjukkan posisi pengguna saat ini di sistem file, yaitu di direktori home milik user *evelin*. |
+| 2 | `ls -l` | Menampilkan isi direktori dengan format panjang (detail) | `total 0` | Direktori `/home/evelin` kosong, tidak ada file maupun folder di dalamnya. |
+| 3 | `cd /tmp` | Berpindah ke direktori sementara `/tmp` | *(tidak ada output)* | Mengganti lokasi kerja aktif menjadi `/tmp`, tempat file sementara sistem disimpan. |
+| 4 | `ls -a` | Menampilkan semua isi folder termasuk file tersembunyi | `. .. .X11-unix snap-private-tmp systemd-private-...` | `.` adalah direktori saat ini, `..` direktori induk, dan lainnya adalah file/folder sistem (termasuk yang tersembunyi). |
+| 5 | `cat /etc/passwd \| head -n 5` | Menampilkan 5 baris pertama dari file `/etc/passwd` | ```<br>root:x:0:0:root:/root:/bin/bash<br>daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin<br>bin:x:2:2:bin:/bin:/usr/sbin/nologin<br>sys:x:3:3:sys:/dev:/usr/sbin/nologin<br>sync:x:4:65534:sync:/bin:/bin/sync<br>``` | File `/etc/passwd` berisi daftar akun pengguna. Tiap baris memiliki format: `user:password_placeholder:UID:GID:info_home:shell`. Contoh: user `root` memiliki UID 0, GID 0, direktori home `/root`, dan shell `/bin/bash`. |
+| 6 | `echo "Hello <Evelin><250202916>" > percobaan.txt` | Membuat file baru dan menulis teks ke dalamnya | *(tidak ada output)* | File baru bernama `percobaan.txt` dibuat di `/tmp` berisi teks `"Hello <Evelin><250202916>"`. |
+| 7 | `ls -l percobaan.txt` | Melihat detail file dan izin aksesnya | `-rw-r--r-- 1 evelin evelin 26 Oct 21 03:25 percobaan.txt` | File dimiliki oleh user *evelin*, dengan izin `rw-r--r--`: pemilik bisa baca/tulis, grup & others hanya bisa baca. |
+| 8 | `chmod 600 percobaan.txt` | Mengubah izin file menjadi hanya pemilik yang bisa baca/tulis | *(tidak ada output)* | Izin diubah menjadi `rw-------`, artinya file hanya bisa diakses oleh pemilik (*evelin*). Keamanan meningkat. |
+| 9 | `ls -l percobaan.txt` | Mengecek hasil perubahan izin | `-rw------- 1 evelin evelin 26 Oct 21 03:25 percobaan.txt` | Terbukti izin file sudah berubah. Grup dan pengguna lain kini tidak memiliki akses sama sekali. |
+| 10 | `sudo chown root percobaan.txt` | Mengubah kepemilikan file dari *evelin* menjadi *root* | *(meminta password, lalu tidak ada output)* | Kepemilikan file berpindah ke *root*. Sekarang hanya user *root* yang berhak mengakses file sepenuhnya. |
+| 11 | `ls -l percobaan.txt` | Mengecek hasil perubahan kepemilikan | `-rw------- 1 root evelin 26 Oct 21 03:25 percobaan.txt` | Pemilik file kini adalah *root* (kolom pertama), sedangkan grup masih *evelin*. File menjadi milik sistem. |
+
 
 
 2. -	Jenis file	- = file biasa, d = direktori, l = link.
