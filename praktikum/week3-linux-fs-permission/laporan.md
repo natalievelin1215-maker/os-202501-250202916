@@ -22,7 +22,24 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+- Model Kepemilikan (Ownership Model)
+  
+Setiap file dan direktori di Linux dimiliki oleh user (pemilik) dan group (kelompok), serta dapat diakses oleh others (pengguna lain) di sistem.
+
+- Tiga Jenis Hak Akses (Permissions Types)
+  
+Linux menggunakan tiga jenis izin utama:
+r (read): membaca isi file atau daftar direktori.
+w (write): mengubah atau menghapus isi file/direktori.
+
+
+- Representasi Simbolik dan Numerik
+  
+Hak akses dapat ditampilkan dalam bentuk simbolik (rwxr-xr--) atau numerik (contoh: 755), di mana setiap angka mewakili kombinasi izin (r=4, w=2, x=1).
+
+- Perintah Pengaturan Akses (chmod, chown, chgrp)
+  
+chmod untuk mengubah izin file dan chown untuk mengubah pemilik file.
 
 ---
 
