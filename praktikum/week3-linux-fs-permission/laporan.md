@@ -150,7 +150,11 @@ Pengguna lain tidak bisa membaca, menyalin, atau menghapus file ini (akan muncul
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1. inux FS Permission merupakan mekanisme dasar keamanan yang mengatur siapa yang boleh membaca, menulis, dan mengeksekusi file atau direktori, sehingga menjaga kerahasiaan dan integritas sistem.
+
+2. Sistem izin berbasis user, group, dan others memastikan setiap file memiliki kontrol akses yang jelas dan terstruktur.
+
+3. Pengelolaan izin melalui perintah seperti chmod dan chown memberi administrator fleksibilitas untuk menyesuaikan hak akses sesuai kebutuhan keamanan dan fungsi sistem.
 
 ---
 
