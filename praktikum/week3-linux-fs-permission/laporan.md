@@ -165,6 +165,9 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 - r--	Hak untuk others (pengguna lain)	r = read, -- = tidak bisa menulis atau menjalankan. Pengguna lain hanya bisa membaca file.
 
 
+
+
+3. chmod memastikan siapa yang boleh mengakses dan bagaimana caranya (baca/tulis/jalankan).dan chown memastikan siapa yang bertanggung jawab atas file tersebut. keduanya menjadi fondasi utama sistem keamanan Linux, menjaga agar hanya pengguna berhak yang dapat mengakses, memodifikasi, atau menjalankan file tertentu.
 ## Quiz
 1.Apa fungsi dari perintah chmod?
    **Jawaban:** chmod (change mode) mengatur siapa yang boleh membaca (read), menulis (write), atau menjalankan (execute) sebuah file atau folder. 
