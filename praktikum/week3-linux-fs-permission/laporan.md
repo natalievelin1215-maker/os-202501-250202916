@@ -1,5 +1,5 @@
 
-# Laporan Praktikum Minggu [3]
+# Laporan Praktikum Minggu 3
 Topik: linux fs permision
 ---
 
