@@ -150,9 +150,13 @@ Tuliskan jawaban di bagian **Quiz** pada laporan:
 3. Mengapa user `root` memiliki hak istimewa di sistem Linux?
 
 **JAWAB**  
+1. Fungsi dari proses init atau systemd dalam sistem Linux
+- Menginisialisasi sistem setelah boot — menyiapkan lingkungan kerja, memeriksa file system, dan memulai service penting.
+- Menjalankan dan mengatur proses background (daemon) seperti jaringan, logging, atau cron.
+- Mengatur urutan start/stop service berdasarkan dependensi.
+- Memantau dan menghidupkan ulang service jika terjadi kegagalan.
 
-
-
+2.
 
 ---
 
