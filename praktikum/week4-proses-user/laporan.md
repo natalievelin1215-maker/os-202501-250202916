@@ -156,7 +156,7 @@ Tuliskan jawaban di bagian **Quiz** pada laporan:
 - Mengatur urutan start/stop service berdasarkan dependensi.
 - Memantau dan menghidupkan ulang service jika terjadi kegagalan.
 
-2.
+2. 
 
 ---
 
