@@ -121,24 +121,38 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+2. Jelaskan setiap output dan fungsinya.
+3. Jelaskan kolom penting seperti PID, USER, %CPU, %MEM, COMMAND.
+4. Catat PID proses sleep
+5. Amati hierarki proses dan identifikasi proses induk (init/systemd).
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+Tuliskan 2–3 poin kesimpulan dari praktikum proses user
 
 ---
 
-## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+### Tugas
+1. Dokumentasikan hasil semua perintah dan jelaskan fungsi tiap perintah.  
+2. Gambarkan hierarki proses dalam bentuk diagram pohon (`pstree`) di laporan.  
+3. Jelaskan hubungan antara user management dan keamanan sistem Linux.  
+4. Upload laporan ke repositori Git tepat waktu.
+
+**JAWAB** 
+
+
+
+### Quiz
+Tuliskan jawaban di bagian **Quiz** pada laporan:
+1. Apa fungsi dari proses `init` atau `systemd` dalam sistem Linux?  
+2. Apa perbedaan antara `kill` dan `killall`?  
+3. Mengapa user `root` memiliki hak istimewa di sistem Linux?
+
+**JAWAB**  
+
+
+
 
 ---
 
