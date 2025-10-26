@@ -121,10 +121,19 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-2. Jelaskan setiap output dan fungsinya.
+2. Jelaskan setiap output dan fungsinya.(whoami,id,groups)
 3. Jelaskan kolom penting seperti PID, USER, %CPU, %MEM, COMMAND.
 4. Catat PID proses sleep
 5. Amati hierarki proses dan identifikasi proses induk (init/systemd).
+
+**JAWAB** 
+1. 
+
+2. - PID adalah nomor identitas unik untuk setiap proses yang sedang berjalan di sistem.
+   - USER yaitu nama pengguna (user) yang menjalankan proses tersebut.
+   - %CPU adalah Persentase penggunaan CPU oleh proses tersebut.
+   - %MEM adalah Persentase penggunaan memori fisik (RAM) oleh proses
+   - COMMAND adalah Perintah atau nama program yang dijalankan oleh proses.
 
 ---
 
