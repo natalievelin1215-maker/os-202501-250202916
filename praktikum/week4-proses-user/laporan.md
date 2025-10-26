@@ -156,8 +156,12 @@ Tuliskan jawaban di bagian **Quiz** pada laporan:
 - Mengatur urutan start/stop service berdasarkan dependensi.
 - Memantau dan menghidupkan ulang service jika terjadi kegagalan.
 
-2. 
+2.
+- kill digunakan untuk menghentikan proses tertentu berdasarkan PID (Process ID).
+Misalnya, jika kamu tahu proses dengan PID 1234 sedang berjalan
+- killall digunakan untuk menghentikan semua proses yang memiliki nama tertentu.
 
+3. 
 ---
 
 ## Refleksi Diri
