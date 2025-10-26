@@ -161,7 +161,8 @@ Tuliskan jawaban di bagian **Quiz** pada laporan:
 Misalnya, jika kamu tahu proses dengan PID 1234 sedang berjalan
 - killall digunakan untuk menghentikan semua proses yang memiliki nama tertentu.
 
-3. 
+3. Karena User root memiliki hak istimewa karena dibutuhkan untuk mengelola, mengamankan, dan memelihara sistem Linux secara penuh, sementara user biasa dibatasi agar sistem tetap stabil dan aman
+   
 ---
 
 ## Refleksi Diri
