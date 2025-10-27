@@ -138,7 +138,11 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum proses user
+1. Setiap proses di Linux dijalankan oleh user tertentu dan memiliki identitas unik berupa PID (Process ID) yang digunakan sistem untuk mengelola, memantau, atau menghentikan proses tersebut.
+
+2. User dan hak aksesnya menentukan kendali terhadap proses. Hanya user pemilik proses atau root yang dapat memodifikasi atau menghentikan proses tersebut.
+
+3. Perintah seperti whoami, id, dan ps aux membantu mengenali identitas user dan proses yang sedang berjalan, sehingga memudahkan administrasi dan pengawasan sistem.
 
 ---
 
@@ -150,6 +154,11 @@ Tuliskan 2–3 poin kesimpulan dari praktikum proses user
 
 **JAWAB** 
 
+
+1.  p
+2.  3
+3. Hubungan antara user management dan keamanan sistem Linux sangat erat, karena pengelolaan pengguna adalah salah satu cara utama untuk mengontrol akses dan melindungi sistem dari penyalahgunaan.User management adalah fondasi utama keamanan Linux.
+Dengan mengatur akun, hak akses, dan izin secara tepat, sistem dapat mencegah pelanggaran keamanan, membatasi dampak kesalahan manusia, dan menjaga integritas serta stabilitas sistem
 
 
 ### Quiz
