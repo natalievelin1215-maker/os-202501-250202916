@@ -158,7 +158,8 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 
 1.  p
-2.  3
+2.  <img width="3756" height="1072" alt="diagram pohon" src="https://github.com/user-attachments/assets/8ec3ec06-e5c6-4a6c-bde0-59e68cc1b436" />
+
 3. Hubungan antara user management dan keamanan sistem Linux sangat erat, karena pengelolaan pengguna adalah salah satu cara utama untuk mengontrol akses dan melindungi sistem dari penyalahgunaan.User management adalah fondasi utama keamanan Linux.
 Dengan mengatur akun, hak akses, dan izin secara tepat, sistem dapat mencegah pelanggaran keamanan, membatasi dampak kesalahan manusia, dan menjaga integritas serta stabilitas sistem
 
