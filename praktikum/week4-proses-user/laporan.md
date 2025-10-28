@@ -228,7 +228,7 @@ Misalnya, jika kamu tahu proses dengan PID 1234 sedang berjalan
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  pemahaman konsep dasar sistem Linux dan interpretasi hasil perintah secara logis
-- Bagaimana cara Anda mengatasinya?  
+- Bagaimana cara Anda mengatasinya?  Belajar memahami konsep dasar dulu sebelum praktik,Diskusi dan latihan bersama teman
 
 ---
 
