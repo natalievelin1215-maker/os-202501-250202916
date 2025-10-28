@@ -154,9 +154,12 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 2. Gambarkan hierarki proses dalam bentuk diagram pohon (`pstree`) di laporan.  
 3. Jelaskan hubungan antara user management dan keamanan sistem Linux.  
 4. Upload laporan- whoami
-Menunjukkan user yang sedang aktif di sistem, yaitu evelin.
 
-- id
+
+**JAWAB** 
+
+
+1. - id
 Menampilkan identitas user (uid, gid) dan grup-grup yang diikutinya.
 
 - groups
@@ -186,10 +189,6 @@ Menghentikan proses sleep dengan PID 710.
 - pstree -p | head -20
 Menampilkan struktur hierarki proses dalam bentuk pohon, dengan systemd(1) sebagai induk utama. ke repositori Git tepat waktu.
 
-**JAWAB** 
-
-
-1.  
 2.  <img width="3756" height="1072" alt="diagram pohon" src="https://github.com/user-attachments/assets/8ec3ec06-e5c6-4a6c-bde0-59e68cc1b436" />
 
 3. Hubungan antara user management dan keamanan sistem Linux sangat erat, karena pengelolaan pengguna adalah salah satu cara utama untuk mengontrol akses dan melindungi sistem dari penyalahgunaan.User management adalah fondasi utama keamanan Linux.
