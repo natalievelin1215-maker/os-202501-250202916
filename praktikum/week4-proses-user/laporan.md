@@ -113,6 +113,14 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
    ```
 
 ---
+## Hasil Eksekusi
+
+<img width="1366" height="768" alt="Proses user 1" src="https://github.com/user-attachments/assets/9bcf977b-34ac-484c-8c6d-86d8df17bad6" />
+
+<img width="1366" height="758" alt="proses user 2" src="https://github.com/user-attachments/assets/b29e66fe-7a8c-41ce-bf70-550e660186bd" />
+
+<img width="1366" height="767" alt="proses user 3" src="https://github.com/user-attachments/assets/cd191ad3-5ec4-4f53-b121-ff22f3bde0a3" />
+
 
 
 ---
