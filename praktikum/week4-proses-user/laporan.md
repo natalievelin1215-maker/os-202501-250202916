@@ -136,7 +136,24 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 3. - evelin       710  0.0  0.0   3124  1664 pts/0    S    16:44   0:00 sleep 1000
 - evelin       712  0.0  0.0   4088  1920 pts/0    S+   16:45   0:00 grep --color=auto sleep
 
-4. - whoami
+4. 
+
+---
+
+## Kesimpulan
+1. Setiap proses di Linux dijalankan oleh user tertentu dan memiliki identitas unik berupa PID (Process ID) yang digunakan sistem untuk mengelola, memantau, atau menghentikan proses tersebut.
+
+2. User dan hak aksesnya menentukan kendali terhadap proses. Hanya user pemilik proses atau root yang dapat memodifikasi atau menghentikan proses tersebut.
+
+3. Perintah seperti whoami, id, dan ps aux membantu mengenali identitas user dan proses yang sedang berjalan, sehingga memudahkan administrasi dan pengawasan sistem.
+
+---
+
+### Tugas
+1. Dokumentasikan hasil semua perintah dan jelaskan fungsi tiap perintah.  
+2. Gambarkan hierarki proses dalam bentuk diagram pohon (`pstree`) di laporan.  
+3. Jelaskan hubungan antara user management dan keamanan sistem Linux.  
+4. Upload laporan- whoami
 Menunjukkan user yang sedang aktif di sistem, yaitu evelin.
 
 - id
@@ -167,29 +184,12 @@ Mengecek apakah proses sleep masih berjalan dengan mencari berdasarkan nama.
 Menghentikan proses sleep dengan PID 710.
 
 - pstree -p | head -20
-Menampilkan struktur hierarki proses dalam bentuk pohon, dengan systemd(1) sebagai induk utama.
-
----
-
-## Kesimpulan
-1. Setiap proses di Linux dijalankan oleh user tertentu dan memiliki identitas unik berupa PID (Process ID) yang digunakan sistem untuk mengelola, memantau, atau menghentikan proses tersebut.
-
-2. User dan hak aksesnya menentukan kendali terhadap proses. Hanya user pemilik proses atau root yang dapat memodifikasi atau menghentikan proses tersebut.
-
-3. Perintah seperti whoami, id, dan ps aux membantu mengenali identitas user dan proses yang sedang berjalan, sehingga memudahkan administrasi dan pengawasan sistem.
-
----
-
-### Tugas
-1. Dokumentasikan hasil semua perintah dan jelaskan fungsi tiap perintah.  
-2. Gambarkan hierarki proses dalam bentuk diagram pohon (`pstree`) di laporan.  
-3. Jelaskan hubungan antara user management dan keamanan sistem Linux.  
-4. Upload laporan ke repositori Git tepat waktu.
+Menampilkan struktur hierarki proses dalam bentuk pohon, dengan systemd(1) sebagai induk utama. ke repositori Git tepat waktu.
 
 **JAWAB** 
 
 
-1.  p
+1.  
 2.  <img width="3756" height="1072" alt="diagram pohon" src="https://github.com/user-attachments/assets/8ec3ec06-e5c6-4a6c-bde0-59e68cc1b436" />
 
 3. Hubungan antara user management dan keamanan sistem Linux sangat erat, karena pengelolaan pengguna adalah salah satu cara utama untuk mengontrol akses dan melindungi sistem dari penyalahgunaan.User management adalah fondasi utama keamanan Linux.
