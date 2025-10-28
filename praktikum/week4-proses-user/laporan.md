@@ -127,14 +127,16 @@ Sertakan screenshot hasil percobaan atau diagram:
 5. Amati hierarki proses dan identifikasi proses induk (init/systemd).
 
 **JAWAB** 
-1. 
+1. - Whoami Menampilkan nama user yang sedang login atau menjalankan terminal saat ini.Output evelin berarti user aktif saat ini bernama evelin.Perintah ini berguna untuk mengecek identitas user yang sedang digunakan, terutama setelah berpindah ke user lain menggunakan sudo.
+   -id Menampilkan informasi lengkap tentang identitas user, termasuk UID (User ID),GID (Group ID),dan daftar grup yang diikuti oleh user.id memberikan informasi identitas lengkap user dalam bentuk angka (ID) dan nama (label).
+   - groups Menampilkan semua grup yang diikuti oleh user yang sedang aktif. groups menampilkan daftar keanggotaan grup user, yang menentukan hak akses dan izin terhadap file atau perangkat.
 
 2. - PID adalah nomor identitas unik untuk setiap proses yang sedang berjalan di sistem.
    - USER yaitu nama pengguna (user) yang menjalankan proses tersebut.
    - %CPU adalah Persentase penggunaan CPU oleh proses tersebut.
    - %MEM adalah Persentase penggunaan memori fisik (RAM) oleh proses
    - COMMAND adalah Perintah atau nama program yang dijalankan oleh proses.
-
+3. 
 ---
 
 ## Kesimpulan
