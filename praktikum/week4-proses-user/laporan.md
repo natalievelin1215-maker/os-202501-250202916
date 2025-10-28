@@ -136,7 +136,15 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 3. - evelin       710  0.0  0.0   3124  1664 pts/0    S    16:44   0:00 sleep 1000
 - evelin       712  0.0  0.0   4088  1920 pts/0    S+   16:45   0:00 grep --color=auto sleep
 
-4. 
+4. - Analisis hierarki proses
+Proses paling atas (induk utama) adalah systemd(1), dengan PID 1.Semua proses lain seperti cron, dbus-daemon, rsyslogd, dan login merupakan proses turunan (child process) dari systemd.Proses seperti bash, head, dan pstree merupakan proses anak dari sesi login user (login atau bash).
+
+- Proses induk utama sistem adalah:systemd (PID 1)
+- Fungsinya:
+1. Menginisialisasi sistem saat booting.
+2. Menjalankan dan memonitor seluruh proses sistem.
+3. Mengatur layanan (services) dan sesi pengguna.
+
 
 ---
 
