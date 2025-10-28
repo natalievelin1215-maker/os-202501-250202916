@@ -136,7 +136,10 @@ Sertakan screenshot hasil percobaan atau diagram:
    - %CPU adalah Persentase penggunaan CPU oleh proses tersebut.
    - %MEM adalah Persentase penggunaan memori fisik (RAM) oleh proses
    - COMMAND adalah Perintah atau nama program yang dijalankan oleh proses.
-3. 
+3. - evelin       710  0.0  0.0   3124  1664 pts/0    S    16:44   0:00 sleep 1000
+- evelin       712  0.0  0.0   4088  1920 pts/0    S+   16:45   0:00 grep --color=auto sleep
+
+4. 
 ---
 
 ## Kesimpulan
