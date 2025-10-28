@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu IV
-Topik: 
+Topik: Proses User
 ---
 
 ## Identitas
@@ -121,10 +121,10 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-2. Jelaskan setiap output dan fungsinya.(whoami,id,groups)
-3. Jelaskan kolom penting seperti PID, USER, %CPU, %MEM, COMMAND.
-4. Catat PID proses sleep
-5. Amati hierarki proses dan identifikasi proses induk (init/systemd).
+2. eksperimen 1 : Jelaskan setiap output dan fungsinya.(whoami,id,groups)
+3. eksperimen 2 : Jelaskan kolom penting seperti PID, USER, %CPU, %MEM, COMMAND.
+4. eksperimen 3 : Catat PID proses sleep
+5. eksperimen 4 : Amati hierarki proses dan identifikasi proses induk (init/systemd).
 
 **JAWAB** 
 1. - Whoami Menampilkan nama user yang sedang login atau menjalankan terminal saat ini.Output evelin berarti user aktif saat ini bernama evelin.Perintah ini berguna untuk mengecek identitas user yang sedang digunakan, terutama setelah berpindah ke user lain menggunakan sudo.
