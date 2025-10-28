@@ -114,9 +114,6 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 
 ---
 
-## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
 
 ---
 
@@ -139,7 +136,39 @@ Sertakan screenshot hasil percobaan atau diagram:
 3. - evelin       710  0.0  0.0   3124  1664 pts/0    S    16:44   0:00 sleep 1000
 - evelin       712  0.0  0.0   4088  1920 pts/0    S+   16:45   0:00 grep --color=auto sleep
 
-4. 
+4. - whoami
+Menunjukkan user yang sedang aktif di sistem, yaitu evelin.
+
+- id
+Menampilkan identitas user (uid, gid) dan grup-grup yang diikutinya.
+
+- groups
+Menunjukkan daftar grup tempat user evelin tergabung, seperti sudo, adm, dan lainnya.
+
+- sudo adduser praktikan
+Menambahkan akun baru bernama praktikan ke sistem beserta home directory-nya.
+
+- sudo passwd praktikan
+Mengatur atau mengganti password untuk user praktikan.
+
+- ps aux | head -10
+Melihat daftar proses yang sedang berjalan di sistem, ditampilkan 10 baris pertama.
+
+- top -n 1
+Menampilkan penggunaan CPU, memori, dan daftar proses aktif saat ini (snapshot sekali).
+
+- sleep 1000 &
+Menjalankan proses sleep selama 1000 detik di background.
+
+- ps aux | grep sleep
+Mengecek apakah proses sleep masih berjalan dengan mencari berdasarkan nama.
+
+- kill 710
+Menghentikan proses sleep dengan PID 710.
+
+- pstree -p | head -20
+Menampilkan struktur hierarki proses dalam bentuk pohon, dengan systemd(1) sebagai induk utama.
+
 ---
 
 ## Kesimpulan
