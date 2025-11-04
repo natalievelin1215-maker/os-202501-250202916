@@ -136,7 +136,7 @@ Gantt Chart:
 5. **Analisis**
    - Bandingkan hasil rata-rata WT dan TAT antara FCFS & SJF.  
    - Jelaskan kondisi kapan SJF lebih unggul dari FCFS dan sebaliknya.  
-   - Tambahkan kesimpulan singkat di akhir laporan.
+   - Tambahkan kesimpulan singkat di akhir laporan. 
 
 6. **Commit & Push**
    ```bash
