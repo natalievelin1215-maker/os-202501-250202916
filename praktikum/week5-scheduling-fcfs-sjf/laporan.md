@@ -22,7 +22,29 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1. FCFS (First Come First Served)
+
+   - Konsep dasar: Proses yang datang lebih dulu akan dieksekusi lebih dulu, seperti antrian di loket — prinsipnya first in, first out (FIFO).
+
+   - Sederhana & mudah diimplementasikan, karena proses dijadwalkan berdasarkan urutan waktu kedatangan (arrival time).
+
+   - Tidak adil untuk proses pendek, karena proses dengan burst time kecil bisa menunggu lama di belakang proses besar (convoy effect).
+
+   - Tidak preemptive, artinya proses yang sedang berjalan tidak bisa dihentikan sampai selesai.
+
+   - Kinerja baik untuk beban kerja seragam, tapi kurang efisien untuk campuran proses panjang dan pendek.
+
+2. SJF (Shortest Job First)
+
+   - Konsep dasar: Proses dengan waktu eksekusi (burst time) paling pendek dieksekusi lebih dulu untuk meminimalkan waktu tunggu rata-rata.
+
+   -  Tujuan utama: Menghasilkan rata-rata waiting time dan turnaround time paling kecil dibanding FCFS.
+
+   - Dapat bersifat non-preemptive (sekali jalan sampai selesai) atau preemptive (dikenal sebagai Shortest Remaining Time First).
+
+   - Butuh prediksi burst time, sehingga implementasinya sulit pada sistem nyata tanpa informasi tambahan.
+
+   - Optimal secara teori, tetapi bisa menyebabkan starvation bagi proses panjang jika banyak proses pendek datang terus-menerus.
 
 ---
 
@@ -135,8 +157,14 @@ Gantt Chart:
    3. Tambahkan kesimpulan singkat di akhir laporan. 
 
 **JAWBAN**
+ 
+1. RATA RATA  FCFS 
+- rata-rata Waiting Time (WT) = 8,75
+- rata-rata Turnaround Time (TAT) = 14,75
 
-1. 
+RATA RATA FJS
+- rata-rata Waiting Time (WT) = 8,5
+- rata-rata Turnaround Time (TAT) = 14,5
 2. - SJF lebih unggul dari FCFS ketika:
 
 - Waktu eksekusi (burst time) setiap proses sudah diketahui atau dapat diperkirakan dengan baik.
@@ -182,6 +210,49 @@ Dapat menyebabkan starvation bagi proses panjang jika proses pendek terus datang
 2. Sajikan hasil perhitungan dalam tabel perbandingan (FCFS vs SJF).  
 3. Analisis kelebihan dan kelemahan tiap algoritma.  
 4. Simpan seluruh hasil dan analisis ke `laporan.md`.  
+
+**JAWABAN**
+
+1. 
+
+2. di eksperimen 2.
+
+3. 1.FCFS (First Come First Served)
+
+Kelebihan:
+
+- Mudah dan sederhana — implementasi paling mudah karena cukup mengikuti urutan kedatangan proses.
+
+- Tidak memerlukan prediksi waktu eksekusi — sistem cukup tahu kapan proses datang.
+
+- Adil secara urutan waktu — setiap proses dilayani sesuai antrian (tidak ada yang diserobot).
+
+Kelemahan:
+
+- Waktu tunggu bisa besar untuk proses pendek yang berada di belakang proses panjang (convoy effect).
+
+- Kurang efisien bila terdapat variasi besar pada waktu eksekusi proses.
+
+- Tidak cocok untuk sistem interaktif karena bisa menimbulkan respon yang lambat.
+
+ 2.SJF (Shortest Job First)
+
+Kelebihan:
+
+- Rata-rata waiting time paling rendah dibanding FCFS, karena proses pendek dikerjakan lebih dulu.
+
+- Efisien untuk sistem batch, di mana waktu eksekusi tiap proses sudah diketahui.
+
+- Meningkatkan throughput sistem (lebih banyak proses selesai dalam waktu singkat).
+
+Kelemahan:
+
+- Sulit diterapkan di dunia nyata, karena waktu eksekusi (burst time) biasanya tidak diketahui sebelumnya.
+
+- Dapat menyebabkan starvation — proses panjang bisa tertunda terus jika proses pendek terus datang.
+
+- Kurang fleksibel untuk sistem real-time yang memerlukan prioritas dinamis.
+
 
 ### Quiz
 Tuliskan jawaban di bagian **Quiz** pada laporan:
