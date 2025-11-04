@@ -58,15 +58,49 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
      0    6    14   21   24
      ```
 
+| Proses | Burst Time | Arrival Time | Star Time | Finis Time |WT | TAT|
+   |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+   | P1 | 6 | 0 | 0 | 6 | 0 | 6 |
+   | P2 | 8 | 1 | 6 | 14 | 5 | 13 |
+   | P3 | 7 | 2 | 14 | 21 | 12 | 19 |
+   | P4 | 3 | 3 | 21 | 24 | 18 | 21 |
+
+   rata-rata Waiting Time (WT) = 8,75
+
+   rata-rata Turnaround Time (TAT) = 14,75
+
+   Gantt Chart:
+
+    | P1 | P2 | P3 | P4 |
+     0    6    14   21   24
+
 3. **Eksperimen 2 – SJF (Shortest Job First)**
    - Urutkan proses berdasarkan *Burst Time* terpendek (dengan memperhatikan waktu kedatangan).  
    - Lakukan perhitungan WT dan TAT seperti langkah sebelumnya.  
+
+| Proses | Burst Time | Arrival Time | Star Time | Finis Time |WT | TAT|
+   |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+   | P4 | 3 | 3 | 3 | 6 | 0 | 3 |
+   | P1 | 6 | 0 | 6  | 12  | 6  |  12 |
+   | P3 | 7 | 2 | 12 | 19 | 10 | 17 |
+   | P2 | 8 | 1 | 19  | 27 | 18  | 26 |
+   
+   rata-rata Waiting Time (WT) = 8,5
+   rata-rata Turnaround Time (TAT) = 14,5
+
+Gantt Chart:
+
+    | P1 | P2 | P3 | P4 |
+     0    6    12   19   27
+
    - Bandingkan hasil FCFS dan SJF pada tabel berikut:
 
      | Algoritma | Avg Waiting Time | Avg Turnaround Time | Kelebihan | Kekurangan |
      |------------|------------------|----------------------|------------|-------------|
-     | FCFS | ... | ... | Sederhana dan mudah diterapkan | Tidak efisien untuk proses panjang |
-     | SJF | ... | ... | Optimal untuk job pendek | Menyebabkan *starvation* pada job panjang |
+     | FCFS | 8,75 | 14,75 | Sederhana dan mudah diterapkan | Tidak efisien untuk proses panjang |
+     | SJF | 8,5 | 14,5 | Optimal untuk job pendek | Menyebabkan *starvation* pada job panjang |
+
+
 
 4. **Eksperimen 3 – Visualisasi Spreadsheet (Opsional)**
    - Gunakan Excel/Google Sheets untuk membuat perhitungan otomatis:
@@ -92,20 +126,53 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
 
 ---
 
 ## Analisis
-   - Bandingkan hasil rata-rata WT dan TAT antara FCFS & SJF.  
-   - Jelaskan kondisi kapan SJF lebih unggul dari FCFS dan sebaliknya.  
-   - Tambahkan kesimpulan singkat di akhir laporan. 
+   1. Bandingkan hasil rata-rata WT dan TAT antara FCFS & SJF.  
+   2. Jelaskan kondisi kapan SJF lebih unggul dari FCFS dan sebaliknya.  
+   3. Tambahkan kesimpulan singkat di akhir laporan. 
+
+**JAWBAN**
+
+1. 
+2. - SJF lebih unggul dari FCFS ketika:
+
+- Waktu eksekusi (burst time) setiap proses sudah diketahui atau dapat diperkirakan dengan baik.
+Karena SJF memilih proses dengan waktu terpendek, algoritma ini dapat meminimalkan waktu tunggu rata-rata dan meningkatkan efisiensi CPU.
+
+- Proses-proses yang datang memiliki variasi burst time yang besar.
+Dalam kondisi ini, SJF mampu menyelesaikan proses-proses kecil dengan cepat, sehingga total waktu tunggu keseluruhan menjadi jauh lebih kecil dibanding FCFS.
+
+- Lingkungan sistem bersifat batch (non-interaktif).
+Pada sistem batch, semua proses sudah diketahui di awal, sehingga mudah menentukan urutan yang paling efisien dengan SJF.
+
+   - FCFS lebih unggul dari SJF ketika:
+
+- Waktu kedatangan proses tidak dapat diprediksi dan burst time sulit diketahui.
+FCFS tidak memerlukan perkiraan waktu eksekusi, jadi lebih sederhana dan mudah diterapkan dalam kondisi nyata.
+
+- Lingkungan sistem bersifat interaktif atau multitasking.
+Dalam sistem seperti ini, FCFS lebih adil karena setiap proses dilayani berdasarkan urutan datangnya, tanpa menunda proses panjang terlalu lama.
+
+- Tujuan utama adalah keadilan, bukan efisiensi.
+FCFS memastikan semua proses mendapat giliran secara berurutan, sehingga tidak terjadi starvation seperti pada SJF.
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+- FCFS
+
+Proses dieksekusi berdasarkan urutan kedatangan, sehingga sederhana dan mudah diterapkan.
+Dapat menyebabkan waktu tunggu rata-rata tinggi jika proses panjang datang lebih dulu (convoy effect).
+Lebih menekankan keadilan waktu datang, bukan efisiensi waktu eksekusi.
+
+- FJS
+
+Menjalankan proses dengan burst time paling pendek terlebih dahulu, sehingga menghasilkan rata-rata waktu tunggu minimum.
+Lebih efisien dibanding FCFS, tetapi sulit diterapkan karena memerlukan perkiraan waktu eksekusi yang akurat.
+Dapat menyebabkan starvation bagi proses panjang jika proses pendek terus datang.
 
 ---
 
@@ -122,13 +189,24 @@ Tuliskan jawaban di bagian **Quiz** pada laporan:
 2. Mengapa SJF dapat menghasilkan rata-rata waktu tunggu minimum?  
 3. Apa kelemahan SJF jika diterapkan pada sistem interaktif?  
 
+
+**JAWABAN**
+1. FCFS (First Come First Served) adalah algoritma penjadwalan CPU yang mengeksekusi proses berdasarkan urutan kedatangannya. Artinya, proses yang datang lebih dulu akan dieksekusi lebih dulu juga. Konsepnya seperti antrian di kasir — siapa datang dulu, dilayani dulu. Algoritma ini sangat sederhana dan mudah diterapkan, tetapi memiliki kelemahan yaitu convoy effect, di mana proses dengan waktu eksekusi (burst time) pendek harus menunggu proses panjang selesai terlebih dahulu. Akibatnya, waktu tunggu rata-rata bisa menjadi lama.
+
+- SJF (Shortest Job First) adalah algoritma yang memilih proses dengan waktu eksekusi paling pendek untuk dijalankan terlebih dahulu. Tujuannya agar waktu tunggu rata-rata menjadi sekecil mungkin. SJF dapat berbentuk non-preemptive (proses tidak dapat diganggu sampai selesai) atau preemptive, yang dikenal sebagai SRTF (Shortest Remaining Time First) — di mana proses baru dengan waktu lebih pendek dapat menghentikan proses yang sedang berjalan.
+
+2. Algoritma SJF (Shortest Job First) mampu menghasilkan rata-rata waktu tunggu minimum karena selalu mengeksekusi proses dengan waktu eksekusi (burst time) paling pendek terlebih dahulu. Dengan cara ini, proses-proses singkat dapat segera selesai tanpa harus menunggu proses panjang, sehingga total waktu tunggu seluruh proses menjadi lebih efisien. Pendekatan ini membuat SJF dianggap sebagai algoritma penjadwalan yang paling optimal dalam meminimalkan waktu tunggu rata-rata.
+
+3. Kelemahan SJF pada sistem interaktif adalah sulit menentukan burst time secara akurat, berisiko menyebabkan starvation pada proses panjang, dan membuat sistem kurang responsif terhadap permintaan pengguna. Karena itu, algoritma ini jarang digunakan pada sistem interaktif dan lebih cocok untuk sistem batch yang beban kerjanya sudah diketahui sebelumnya.
+
+
+
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini?      
 - Bagaimana cara Anda mengatasinya?  
-
 ---
 
 **Credit:**  
