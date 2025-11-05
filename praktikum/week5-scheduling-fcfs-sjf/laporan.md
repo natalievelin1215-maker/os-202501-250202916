@@ -196,7 +196,7 @@ Proses dieksekusi berdasarkan urutan kedatangan, sehingga sederhana dan mudah di
 Dapat menyebabkan waktu tunggu rata-rata tinggi jika proses panjang datang lebih dulu (convoy effect).
 Lebih menekankan keadilan waktu datang, bukan efisiensi waktu eksekusi.
 
-- FJS
+-SJF
 
 Menjalankan proses dengan burst time paling pendek terlebih dahulu, sehingga menghasilkan rata-rata waktu tunggu minimum.
 Lebih efisien dibanding FCFS, tetapi sulit diterapkan karena memerlukan perkiraan waktu eksekusi yang akurat.
@@ -276,8 +276,8 @@ Tuliskan jawaban di bagian **Quiz** pada laporan:
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?      
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?   sulit Mencari nilai star time dan finis time pada FCFS dan SJF pada awal praktikum 
+- Bagaimana cara Anda mengatasinya? dengan cara  mencari materi di berbagai website dan Ai,kemudian saya mempelajari dan memahami materi yang saya cari di web site dan Ai .
 ---
 
 **Credit:**  
