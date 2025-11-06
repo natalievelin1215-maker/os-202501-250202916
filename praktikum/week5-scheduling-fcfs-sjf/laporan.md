@@ -215,6 +215,9 @@ Dapat menyebabkan starvation bagi proses panjang jika proses pendek terus datang
 
 1. 
 
+<img width="1364" height="761" alt="SKENARIO FCFS dan SJF" src="https://github.com/user-attachments/assets/f520b504-3458-4878-836f-b6d6775a0440" />
+
+
 2. 
 
 | Algoritma | Avg Waiting Time | Avg Turnaround Time | Kelebihan | Kekurangan |
