@@ -215,7 +215,13 @@ Dapat menyebabkan starvation bagi proses panjang jika proses pendek terus datang
 
 1. 
 
-2. di eksperimen 2.
+2. 
+
+| Algoritma | Avg Waiting Time | Avg Turnaround Time | Kelebihan | Kekurangan |
+|------------|------------------|----------------------|------------|-------------|
+| FCFS | 8,75 | 14,75 | Sederhana dan mudah diterapkan | Tidak efisien untuk proses panjang |
+| SJF | 8,5 | 14,5 | Optimal untuk job pendek | Menyebabkan *starvation* pada job panjang |
+
 
 3. 1.FCFS (First Come First Served)
 
