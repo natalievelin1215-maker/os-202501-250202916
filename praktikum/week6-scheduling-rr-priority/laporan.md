@@ -1,13 +1,13 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu VI
+Topik: "Penjadwalan CPU - Round Robin (RR) dan Priority Scheduling"
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Evelin Natalie
+- **NIM**   : 250202916
+- **Kelas** : 1IKRA
 
 ---
 
