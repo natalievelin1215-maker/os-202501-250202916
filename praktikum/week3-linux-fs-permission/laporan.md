@@ -211,7 +211,7 @@ Pengguna lain tidak bisa membaca, menyalin, atau menghapus file ini (akan muncul
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  yang menantang minggu ini ada pada sinyal yang kurang menduung 
+- Apa bagian yang paling menantang minggu ini?  yang menantang minggu ini ada pada sinyal yang kurang mendukung
 - Bagaimana cara Anda mengatasinya?  dengan menggunakan hospot teman
 
 ---
