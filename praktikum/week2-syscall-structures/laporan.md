@@ -1,5 +1,5 @@
 
-# Laporan Praktikum Minggu [2]
+# Laporan Praktikum Minggu [II]
 Topik: system call
 
 ---
