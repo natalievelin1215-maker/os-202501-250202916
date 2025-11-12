@@ -152,7 +152,45 @@ Quantum 5
 ---
 
 ## Analisis
+1. Perbandingan angka (hasil praktikum)
 
+RR (q=3): avg TAT = 14, avg WT = 8.5.
+
+Priority (non-preemptive): avg TAT = 10.75, avg WT = 5.25.
+Dari angka di atas terlihat Priority lebih cepat menyelesaikan proses (TAT lebih kecil) dan membuat proses menunggu lebih sedikit (WT lebih kecil) pada skenario dan data yang dipakai.
+
+2. Pengaruh time quantum
+
+Dengan q = 2 (kecil) hasilnya memburuk: avg TAT ≈ 17.75, avg WT ≈ 12.25 — karena banyaknya preemption menyebabkan lebih banyak context switching dan penundaan penyelesaian total.
+
+Dengan q = 5 (besar) RR mendekati perilaku non-preemptive: avg TAT ≈ 12.5, avg WT ≈ 7 — lebih baik daripada q=2/3 untuk dataset ini, tetapi jika quantum terlalu besar RR kehilangan keunggulan interaktivitasnya.
+Intinya: quantum yang terlalu kecil → overhead context switching tinggi; quantum yang terlalu besar → berkurang fairness dan mirip FCFS. Pilih quantum seimbang (sering: sekitar nilai rata-rata burst time kecil) untuk trade-off responsivitas & efisiensi.
+
+3. Pengaruh prioritas
+
+Prioritas menempatkan proses penting (nilai prioritas kecil) lebih dahulu sehingga menurunkan WT/TAT bagi proses berprioritas tinggi.
+
+Risiko: proses prioritas rendah bisa tertinggal (starvation) jika banyak proses prioritas tinggi terus masuk. Mitigasi umum: aging (meningkatkan prioritas proses yang menunggu lama) atau batas waktu tunggu maksimal.
+
+4. Observasi Gantt dan urutan eksekusi
+
+RR menunjukkan interleaving (giliran bergantian), sehingga proses panjang tetap bergerak maju meskipun tidak tuntas — baik untuk fairness.
+
+Priority (non-preemptive) menunjukkan blok eksekusi berurutan menurut prioritas, sehingga proses prioritas rendah menunggu sampai proses prioritas tinggi selesai — efisiensi per proses tinggi tetapi fairness menurun.
+
+5. Keterbatasan percobaan & asumsi
+
+Percobaan memakai dataset kecil dan priority non-preemptive; hasil dapat berubah untuk beban lain (lebih banyak proses, arrival time berbeda, atau priority preemptive).
+
+Overhead context switching diasumsikan tidak bermetrik (tidak dimasukkan ke perhitungan numerik) — pada sistem nyata overhead ini berpengaruh signifikan terutama untuk quantum kecil.
+
+6. Rekomendasi praktis
+
+Untuk time-sharing / interaktif: gunakan RR dengan quantum yang dipilih mendekati rata-rata burst time pendek; ukur overhead context switching.
+
+Untuk sistem yang butuh respons terhadap tugas penting (real-time non-kritikal): gunakan Priority + mekanisme mitigasi starvation (aging).
+
+Saat melapor: sertakan Gantt Chart, hitungan WT/TAT per proses, dan percobaan variasi quantum untuk mendukung kesimpulan.
 ---
 
 ## Kesimpulan
