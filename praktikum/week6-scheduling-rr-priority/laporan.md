@@ -258,8 +258,8 @@ Tuliskan jawaban di bagian **Quiz** pada laporan:
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?  Kurang memahami perhitungan RR priority
+- Bagaimana cara Anda mengatasinya? bertanya kepada teman yang sudah mengerjakan  
 
 ---
 
