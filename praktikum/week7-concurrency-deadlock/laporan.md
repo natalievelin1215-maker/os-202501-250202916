@@ -294,13 +294,14 @@ Ekperimen 3
 
 ## Hasil Simulasi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/pseudocodeekperimen1.png)
 
-![Screenshot hasil](screenshots/Pseudocodeekperimen2.png)
+![Screenshot hasil](screenshots/pseudocodeekperimen1.PNG)
 
-![Screenshot hasil](screenshots/simulasiekperimen1.png)
+![Screenshot hasil](screenshots/Pseudocodeekperimen2.PNG)
 
-![Screenshot hasil](screenshots/simulasiekperimen2.png)
+![Screenshot hasil](screenshots/simulasiekperimen1.PNG)
+
+![Screenshot hasil](screenshots/simulasiekperimen2.PNG)
 
 ---
 
