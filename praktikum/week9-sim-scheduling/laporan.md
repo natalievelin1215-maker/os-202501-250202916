@@ -7,7 +7,7 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ## Identitas
 - **Nama**  : Evelin Natalie
 - **NIM**   : 250202916  
-- **Kelas** : 1IKRA    afafa
+- **Kelas** : 1IKRA    fafa
 
 ---
 
