@@ -90,6 +90,14 @@ Simulasi digunakan sebagai pendekatan eksperimental untuk mempelajari perilaku a
 ---
 
 ## Hasil Eksekusi
+
+<img width="1360" height="768" alt="dataset FCFS" src="https://github.com/user-attachments/assets/d6a95524-0ddb-421c-9745-6fa8584b18b1" />
+
+
+<img width="1366" height="768" alt="dataset SJF" src="https://github.com/user-attachments/assets/7c21805f-caec-44a8-8ea2-14bdaf4f030f" />
+
+
+
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/example.png)
 
