@@ -98,9 +98,6 @@ Simulasi digunakan sebagai pendekatan eksperimental untuk mempelajari perilaku a
 
 
 
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
-
 ---
 
 ## Analisis
@@ -232,7 +229,11 @@ Hanya menghasilkan hasil numerik.
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+Simulasi algoritma penjadwalan CPU menggunakan metode First Come First Served (FCFS) berhasil diimplementasikan dan dijalankan dengan baik menggunakan dataset yang diberikan. Hasil simulasi menunjukkan perhitungan waiting time dan turnaround time yang sesuai dengan teori penjadwalan CPU.
+
+Perbandingan antara hasil simulasi dan perhitungan manual menunjukkan nilai yang sama, sehingga dapat disimpulkan bahwa program simulasi yang dibuat benar secara logika dan matematis serta mampu merepresentasikan konsep dasar penjadwalan CPU dengan akurat.
+
+Simulasi terbukti efektif sebagai alat bantu pembelajaran karena mempermudah analisis kinerja algoritma penjadwalan, meskipun masih memiliki keterbatasan dalam merepresentasikan kondisi sistem operasi nyata secara penuh.
 
 ---
 
@@ -279,13 +280,16 @@ Sebaliknya, simulasi dilakukan menggunakan program komputer yang mampu memproses
 Algoritma scheduling yang paling mudah diimplementasikan adalah First Come First Served (FCFS). Hal ini karena FCFS bekerja dengan prinsip yang sangat sederhana, yaitu proses yang pertama kali datang akan dilayani terlebih dahulu tanpa mempertimbangkan waktu eksekusi, prioritas, atau faktor lainnya. Implementasinya cukup menggunakan satu antrian (queue) dan mengeksekusi proses secara berurutan sesuai urutan kedatangan, sehingga logika programnya mudah dipahami dan tidak memerlukan struktur data atau perhitungan yang kompleks.
 
 Dibandingkan dengan algoritma lain seperti Shortest Job First (SJF), Priority Scheduling, atau Round Robin, FCFS tidak memerlukan proses pemilihan ulang (selection) atau pengurutan proses berdasarkan kriteria tertentu. SJF dan Priority membutuhkan perbandingan antar proses, sedangkan Round Robin memerlukan pengaturan time quantum dan mekanisme context switching yang lebih rumit. Oleh karena itu, dari segi konsep, logika, dan implementasi teknis, FCFS merupakan algoritma scheduling yang paling mudah untuk diterapkan, terutama bagi pemula atau untuk tujuan pembelajaran dasar sistem operasi.
-s
+
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
+Bagian yang paling menantang pada praktikum ini adalah memahami alur kerja algoritma penjadwalan CPU serta menghubungkan konsep teoritis seperti arrival time, burst time, waiting time, dan turnaround time ke dalam bentuk program simulasi. Selain itu, memastikan hasil simulasi sesuai dengan perhitungan manual juga memerlukan ketelitian.
+
 - Bagaimana cara Anda mengatasinya?  
+Cara mengatasinya adalah dengan mempelajari kembali materi penjadwalan CPU, mengerjakan perhitungan manual terlebih dahulu, lalu membandingkannya secara bertahap dengan hasil program. Dengan melakukan pengujian berulang dan mengecek setiap tahapan perhitungan, kesalahan dapat diminimalkan dan pemahaman terhadap algoritma FCFS menjadi lebih baik.
 
 ---
 
