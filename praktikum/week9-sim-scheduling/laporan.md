@@ -7,7 +7,7 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ## Identitas
 - **Nama**  : Evelin Natalie
 - **NIM**   : 250202916  
-- **Kelas** : 1IKRA    fafa
+- **Kelas** : 1IKRA    
 
 ---
 
@@ -97,8 +97,130 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Analisis
    - Jelaskan alur program.  
-   - Bandingkan hasil simulasi dengan perhitungan manual.  
-   - Jelaskan kelebihan dan keterbatasan simulasi.
+
+. Alur Program
+a. Inisialisasi Data
+```bash
+processes = ["P1", "P2", "P3", "P4"]
+arrival_time = [0, 1, 2, 3]
+burst_time = [6, 8, 7, 3]
+```
+
+Menentukan daftar proses, arrival time, dan burst time.
+
+Urutan proses sudah sesuai dengan kedatangan (FCFS).
+```
+n = len(processes)
+```
+
+Menyimpan jumlah proses.
+```
+start_time = [0] * n
+finish_time = [0] * n
+waiting_time = [0] * n
+turnaround_time = [0] * n
+```
+
+Menyediakan array untuk menyimpan hasil perhitungan setiap proses.
+
+b. Proses Penjadwalan FCFS
+for i in range(n):
+
+
+Perulangan untuk memproses setiap proses satu per satu sesuai urutan kedatangan.
+
+Proses pertama
+   ```
+if i == 0:
+    start_time[i] = arrival_time[i]
+````
+
+Proses pertama langsung dieksekusi saat tiba.
+
+Proses berikutnya
+```
+else:
+    start_time[i] = max(finish_time[i - 1], arrival_time[i])
+```
+
+Proses dimulai setelah proses sebelumnya selesai atau setelah ia datang.
+
+Perhitungan waktu
+```
+finish_time[i] = start_time[i] + burst_time[i]
+waiting_time[i] = start_time[i] - arrival_time[i]
+turnaround_time[i] = finish_time[i] - arrival_time[i]
+```
+
+Finish Time = Start + Burst
+
+Waiting Time = Start − Arrival
+
+Turnaround Time = Finish − Arrival
+
+c. Menghitung Rata-rata
+```
+avg_waiting_time = sum(waiting_time) / n
+avg_turnaround_time = sum(turnaround_time) / n
+```
+
+Menghitung rata-rata waiting time dan turnaround time.
+   - Bandingkan hasil simulasi dengan perhitungan manual.
+
+    Perbandingan Hasil Simulasi dan Perhitungan Manual
+a. Perhitungan Manual FCFS
+
+| Proses | Arrival |	Burst | Start | Finish | Waiting	| Turnaround |
+| ------ | ------- | ----- | ----- | ------ | ------- | ---------  |
+| P1 | 0	| 6 |	0 | 6 | 0 | 6 |
+| P2 | 1 | 8 |	6 | 14| 5 | 13|
+| P3 | 2 | 7 |	14| 21| 12| 19|
+| P4 | 3 | 3 |	21| 24| 18|	21|
+
+Rata-rata Waiting Time
+(0+5+12+18)/4=8.75
+
+Rata-rata Turnaround Time
+(6+13+19+21)/4=14.75
+
+b. Hasil Simulasi Program
+
+Waiting Time rata-rata = 8.75
+
+Turnaround Time rata-rata = 14.75
+
+Hasil simulasi sama persis dengan perhitungan manual, sehingga program berjalan dengan benar.
+
+- Jelaskan kelebihan dan keterbatasan simulasi.
+
+a. Kelebihan Simulasi
+
+1. Cepat dan akurat
+Menghindari kesalahan perhitungan manual.
+
+2. Mudah diuji ulang
+Dataset dapat diubah tanpa menghitung ulang secara manual.
+
+3. Cocok untuk banyak proses
+Efisien untuk jumlah proses besar.
+
+4. Membantu visualisasi konsep
+Mempermudah pemahaman algoritma scheduling.
+
+b. Keterbatasan Simulasi
+
+1. Tidak merepresentasikan kondisi nyata sepenuhnya
+Tidak memperhitungkan context switching dan I/O.
+
+2. Hanya sesuai algoritma tertentu
+Kode ini khusus FCFS, tidak bisa langsung dipakai untuk SJF atau Round Robin.
+
+3. Urutan proses statis
+Tidak menangani proses yang datang secara dinamis saat CPU idle.
+
+4. Tidak menunjukkan performa sistem secara real-time
+Hanya menghasilkan hasil numerik.
+
 ---
 
 ## Kesimpulan
