@@ -1,13 +1,12 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: Simulasi Algoritma Penjadwalan CPU
-
+# Laporan Praktikum Minggu XI
+Topik: simulasi Scheduling 
 ---
 
 ## Identitas
-- **Nama**  : Faik Setyawan
-- **NIM**   : 250202936
-- **Kelas** : 1IKRA
+- **Nama**  : Evelin Natalie
+- **NIM**   : 250202916  
+- **Kelas** : 1IKRA    
 
 ---
 
@@ -18,23 +17,25 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 3. Menyajikan output simulasi dalam bentuk tabel atau grafik.  
 4. Menjelaskan hasil simulasi secara tertulis.  
 5. Mengunggah kode dan laporan ke Git repository dengan rapi dan tepat waktu.
+
+
 ---
 
 ## Dasar Teori
-Penjadwalan CPU (CPU Scheduling)
-Penjadwalan CPU merupakan proses pengaturan urutan eksekusi beberapa proses oleh sistem operasi ketika CPU harus melayani lebih dari satu proses secara bersamaan.
+Konsep Dasar Penjadwalan CPU
+Penjadwalan CPU merupakan fungsi utama sistem operasi yang bertugas mengatur pembagian waktu pemrosesan CPU kepada berbagai proses yang berada dalam keadaan siap (ready state). Karena jumlah proses yang meminta layanan CPU sering kali lebih banyak daripada jumlah CPU yang tersedia, diperlukan mekanisme penjadwalan agar setiap proses memperoleh giliran eksekusi secara adil dan efisien. Dalam simulasi, konsep ini dimodelkan dengan mengatur urutan eksekusi proses berdasarkan aturan tertentu yang ditentukan oleh algoritma penjadwalan yang digunakan.
 
-Tujuan Penjadwalan
-Tujuan utama penjadwalan CPU adalah meningkatkan efisiensi sistem, seperti mengurangi waktu tunggu proses (waiting time), mempercepat penyelesaian proses (turnaround time), serta menjaga agar CPU tidak menganggur.
+Karakteristik dan Status Proses
+Setiap proses dalam sistem memiliki karakteristik tertentu seperti arrival time (waktu kedatangan proses), burst time (lama waktu eksekusi CPU), dan priority (tingkat prioritas). Selain itu, proses juga dapat berada dalam beberapa status seperti new, ready, running, waiting, dan terminated. Simulasi algoritma penjadwalan CPU memanfaatkan karakteristik dan perubahan status ini untuk merepresentasikan kondisi nyata sistem operasi secara lebih akurat.
 
-Jenis Penjadwalan
-Penjadwalan dibagi menjadi preemptive dan non-preemptive, di mana pada sistem preemptive proses dapat dihentikan sementara untuk memberi kesempatan pada proses lain yang memiliki prioritas lebih tinggi.
+Jenis dan Mekanisme Algoritma Penjadwalan
+Algoritma penjadwalan CPU dibedakan menjadi dua kategori utama, yaitu non-preemptive dan preemptive. Pada algoritma non-preemptive, proses yang sedang berjalan tidak dapat dihentikan hingga selesai atau menunggu I/O, sedangkan pada algoritma preemptive, proses dapat dihentikan sementara untuk memberi kesempatan kepada proses lain yang lebih prioritas. Simulasi memungkinkan pengamatan bagaimana perbedaan mekanisme ini memengaruhi urutan eksekusi dan respons sistem terhadap proses baru.
 
-Parameter Penjadwalan
-Dalam simulasi penjadwalan CPU, setiap proses memiliki parameter seperti waktu kedatangan (arrival time), lama eksekusi (burst time), dan prioritas, yang digunakan untuk menentukan urutan eksekusi proses.
+Kriteria Evaluasi Kinerja Penjadwalan
+Untuk menilai efektivitas suatu algoritma penjadwalan, digunakan beberapa metrik kinerja seperti waiting time, turnaround time, response time, throughput, dan CPU utilization. Simulasi berperan penting dalam menghitung dan membandingkan nilai-nilai metrik tersebut secara sistematis, sehingga dapat diketahui algoritma mana yang memberikan kinerja terbaik untuk kondisi beban kerja tertentu.
 
-Simulasi Algoritma Penjadwalan
-Simulasi dilakukan untuk memahami cara kerja algoritma penjadwalan dan membandingkan kinerjanya, sehingga dapat diketahui algoritma mana yang paling efektif untuk kondisi tertentu.
+Peran dan Manfaat Simulasi dalam Analisis Penjadwalan
+Simulasi digunakan sebagai pendekatan eksperimental untuk mempelajari perilaku algoritma penjadwalan tanpa harus menerapkannya langsung pada sistem operasi nyata. Melalui simulasi, berbagai skenario beban kerja dapat diuji dengan aman dan fleksibel, seperti perubahan jumlah proses, variasi waktu eksekusi, dan perbedaan prioritas. Hal ini membantu dalam memahami kelebihan, keterbatasan, serta dampak penerapan suatu algoritma penjadwalan CPU secara mendalam.
 
 ---
 
@@ -84,154 +85,158 @@ Simulasi dilakukan untuk memahami cara kerja algoritma penjadwalan dan membandin
    git commit -m "Minggu 9 - Simulasi Scheduling CPU"
    git push origin main
    ```
-``
 
 ---
 
 ## Hasil Eksekusi
-screenshot hasil 
-![Screenshot hasil](screenshots/example.png)
+
+<img width="1360" height="768" alt="dataset FCFS" src="https://github.com/user-attachments/assets/d6a95524-0ddb-421c-9745-6fa8584b18b1" />
+
+
+<img width="1366" height="768" alt="dataset SJF" src="https://github.com/user-attachments/assets/7c21805f-caec-44a8-8ea2-14bdaf4f030f" />
+
+
 
 ---
 
 ## Analisis
-   - Jelaskan alur program. 
+   - Jelaskan alur program.  
 
-   a. Inisialisasi Dataset
-
-```processes = ["P1", "P2", "P3", "P4"]
+. Alur Program
+a. Inisialisasi Data
+```bash
+processes = ["P1", "P2", "P3", "P4"]
 arrival_time = [0, 1, 2, 3]
 burst_time = [6, 8, 7, 3]
 ```
 
-processes → daftar proses
+Menentukan daftar proses, arrival time, dan burst time.
 
-arrival_time → waktu kedatangan tiap proses
+Urutan proses sudah sesuai dengan kedatangan (FCFS).
+```
+n = len(processes)
+```
 
-burst_time → lama eksekusi (CPU burst)
-
-Jumlah proses disimpan dalam variabel n.
-
-b. Inisialisasi Variabel Hasil
+Menyimpan jumlah proses.
 ```
 start_time = [0] * n
 finish_time = [0] * n
 waiting_time = [0] * n
 turnaround_time = [0] * n
-````
+```
 
-Digunakan untuk menyimpan:
+Menyediakan array untuk menyimpan hasil perhitungan setiap proses.
 
-start_time → waktu proses mulai dieksekusi
-
-finish_time → waktu proses selesai
-
-waiting_time → waktu tunggu
-
-turnaround_time → total waktu proses di sistem
-
-c. Proses Penjadwalan FCFS
+b. Proses Penjadwalan FCFS
 for i in range(n):
 
 
-Loop digunakan untuk memproses setiap proses secara berurutan sesuai urutan kedatangan.
+Perulangan untuk memproses setiap proses satu per satu sesuai urutan kedatangan.
 
-Proses pertama (P1)
-```
-start_time[i] = arrival_time[i]
-```
+Proses pertama
+   ```
+if i == 0:
+    start_time[i] = arrival_time[i]
+````
 
-Karena CPU masih kosong, proses langsung dieksekusi.
+Proses pertama langsung dieksekusi saat tiba.
 
 Proses berikutnya
 ```
-start_time[i] = max(finish_time[i - 1], arrival_time[i])
+else:
+    start_time[i] = max(finish_time[i - 1], arrival_time[i])
 ```
 
-Proses hanya bisa mulai jika:
+Proses dimulai setelah proses sebelumnya selesai atau setelah ia datang.
 
-CPU sudah selesai menjalankan proses sebelumnya
-
-Proses tersebut sudah datang
-
-d. Perhitungan Waktu
+Perhitungan waktu
 ```
 finish_time[i] = start_time[i] + burst_time[i]
 waiting_time[i] = start_time[i] - arrival_time[i]
 turnaround_time[i] = finish_time[i] - arrival_time[i]
-
 ```
-Rumus:
-```
-Finish Time = Start Time + Burst Time
 
-Waiting Time = Start Time − Arrival Time
+Finish Time = Start + Burst
 
-Turnaround Time = Finish Time − Arrival Time
-```
-e. Perhitungan Rata-rata
+Waiting Time = Start − Arrival
+
+Turnaround Time = Finish − Arrival
+
+c. Menghitung Rata-rata
 ```
 avg_waiting_time = sum(waiting_time) / n
 avg_turnaround_time = sum(turnaround_time) / n
 ```
 
-Digunakan untuk menilai kinerja algoritma FCFS.
+Menghitung rata-rata waiting time dan turnaround time.
+   - Bandingkan hasil simulasi dengan perhitungan manual.
 
-   - Bandingkan hasil simulasi dengan perhitungan manual.  
-   
-   Hasil simulasi program sama dengan perhitungan manual, yang berarti algoritma diimplementasikan dengan benar.
-Perbedaannya hanya pada cara pengerjaan:
+    Perbandingan Hasil Simulasi dan Perhitungan Manual
+a. Perhitungan Manual FCFS
 
-Manual → lambat dan rawan kesalahan
+| Proses | Arrival |	Burst | Start | Finish | Waiting	| Turnaround |
+| ------ | ------- | ----- | ----- | ------ | ------- | ---------  |
+| P1 | 0	| 6 |	0 | 6 | 0 | 6 |
+| P2 | 1 | 8 |	6 | 14| 5 | 13|
+| P3 | 2 | 7 |	14| 21| 12| 19|
+| P4 | 3 | 3 |	21| 24| 18|	21|
 
-Simulasi → cepat, konsisten, dan efisien
+Rata-rata Waiting Time
+(0+5+12+18)/4=8.75
 
-   - Jelaskan kelebihan dan keterbatasan simulasi.
+Rata-rata Turnaround Time
+(6+13+19+21)/4=14.75
 
-Kelebihan Simulasi
+b. Hasil Simulasi Program
 
-1. Efisien untuk dataset besar
-Tidak perlu menghitung satu per satu secara manual.
+Waiting Time rata-rata = 8.75
 
-2. Akurasi tinggi
-Mengurangi kesalahan manusia.
+Turnaround Time rata-rata = 14.75
 
-3. Mudah diuji ulang
-Dataset bisa diganti tanpa mengubah logika.
+Hasil simulasi sama persis dengan perhitungan manual, sehingga program berjalan dengan benar.
 
-4. Memudahkan perbandingan algoritma
-Bisa langsung diterapkan ke FCFS, SJF, RR, dll.
+- Jelaskan kelebihan dan keterbatasan simulasi.
 
-Keterbatasan Simulasi
+a. Kelebihan Simulasi
 
-1. Tidak merepresentasikan kondisi sistem nyata sepenuhnya
-Misalnya overhead context switching tidak dihitung.
+1. Cepat dan akurat
+Menghindari kesalahan perhitungan manual.
 
-2. Bergantung pada asumsi
-Semua proses dianggap ideal (tidak ada I/O wait).
+2. Mudah diuji ulang
+Dataset dapat diubah tanpa menghitung ulang secara manual.
 
-3. Membutuhkan pemahaman logika program
-Kesalahan logika akan menghasilkan output yang salah.
+3. Cocok untuk banyak proses
+Efisien untuk jumlah proses besar.
+
+4. Membantu visualisasi konsep
+Mempermudah pemahaman algoritma scheduling.
+
+b. Keterbatasan Simulasi
+
+1. Tidak merepresentasikan kondisi nyata sepenuhnya
+Tidak memperhitungkan context switching dan I/O.
+
+2. Hanya sesuai algoritma tertentu
+Kode ini khusus FCFS, tidak bisa langsung dipakai untuk SJF atau Round Robin.
+
+3. Urutan proses statis
+Tidak menangani proses yang datang secara dinamis saat CPU idle.
+
+4. Tidak menunjukkan performa sistem secara real-time
+Hanya menghasilkan hasil numerik.
 
 ---
 
 ## Kesimpulan
-Simulasi algoritma penjadwalan CPU, khususnya FCFS, membantu memahami cara kerja penjadwalan proses secara sistematis berdasarkan waktu kedatangan.
+Simulasi algoritma penjadwalan CPU menggunakan metode First Come First Served (FCFS) berhasil diimplementasikan dan dijalankan dengan baik menggunakan dataset yang diberikan. Hasil simulasi menunjukkan perhitungan waiting time dan turnaround time yang sesuai dengan teori penjadwalan CPU.
 
-Hasil simulasi yang diperoleh sesuai dengan perhitungan manual, sehingga dapat disimpulkan bahwa program yang dibuat telah berjalan dengan benar.
+Perbandingan antara hasil simulasi dan perhitungan manual menunjukkan nilai yang sama, sehingga dapat disimpulkan bahwa program simulasi yang dibuat benar secara logika dan matematis serta mampu merepresentasikan konsep dasar penjadwalan CPU dengan akurat.
 
-Penggunaan simulasi mempermudah analisis kinerja algoritma penjadwalan CPU, terutama dalam menghitung waiting time dan turnaround time secara efisien.
+Simulasi terbukti efektif sebagai alat bantu pembelajaran karena mempermudah analisis kinerja algoritma penjadwalan, meskipun masih memiliki keterbatasan dalam merepresentasikan kondisi sistem operasi nyata secara penuh.
 
 ---
 
-## Quiz dan Tugas
-### Tugas
-1. Buat program simulasi FCFS atau SJF.  
-2. Jalankan program dengan dataset uji.  
-3. Sajikan output dalam tabel atau grafik.  
-4. Tulis laporan praktikum pada `laporan.md`.
-
-## E. Tugas & Quiz
+## Quiz & Tugas
 ### Tugas
 1. Buat program simulasi FCFS atau SJF.  
 2. Jalankan program dengan dataset uji.  
@@ -242,23 +247,48 @@ Penggunaan simulasi mempermudah analisis kinerja algoritma penjadwalan CPU, teru
 Jawab pada bagian **Quiz** di laporan:
 1. Mengapa simulasi diperlukan untuk menguji algoritma scheduling?  
 
-Simulasi diperlukan karena algoritma scheduling bekerja dalam kondisi yang dinamis, seperti waktu kedatangan proses yang berbeda, variasi burst time, serta banyaknya proses yang berjalan bersamaan. Dengan simulasi, kita dapat meniru kondisi sistem operasi yang mendekati keadaan nyata tanpa harus menerapkannya langsung pada sistem sebenarnya. Simulasi juga membantu membandingkan kinerja beberapa algoritma (misalnya FCFS, SJF, Priority, Round Robin) berdasarkan metrik seperti waiting time, turnaround time, dan response time secara lebih objektif.
+Simulasi diperlukan untuk menguji algoritma scheduling karena beberapa alasan penting berikut:
+   
+   1. Sulit diuji langsung pada sistem nyata
+Menguji algoritma scheduling langsung pada sistem operasi yang sedang berjalan berisiko mengganggu kinerja sistem, menyebabkan crash, atau kehilangan data. Simulasi memungkinkan pengujian tanpa risiko tersebut.
 
-2. Apa perbedaan hasil simulasi dengan perhitungan manual jika dataset besar?  
+   2. Lingkungan pengujian dapat dikontrol
+Dengan simulasi, kondisi seperti jumlah proses, waktu kedatangan (arrival time), waktu eksekusi (burst time), dan prioritas dapat diatur secara bebas sehingga hasil pengujian lebih terukur dan adil.
 
+   3. Memudahkan perbandingan antar algoritma
+Simulasi memungkinkan beberapa algoritma (misalnya FCFS, SJF, Priority, Round Robin) diuji dengan data yang sama, sehingga perbedaan performa dapat dibandingkan secara objektif.
 
-Pada dataset kecil, hasil simulasi dan perhitungan manual biasanya sama karena prosesnya masih mudah dilacak. Namun, jika dataset besar, perhitungan manual menjadi sangat kompleks, memakan waktu, dan rawan kesalahan manusia. Simulasi dengan bantuan program mampu mengolah data dalam jumlah besar secara cepat dan konsisten, sehingga hasilnya lebih akurat dan efisien dibandingkan perhitungan manual.
+   4. Menghemat waktu dan biaya
+Simulasi lebih efisien dibandingkan implementasi langsung pada sistem nyata, terutama untuk skenario kompleks atau skala besar.
+
+   5. Dapat mengukur metrik kinerja dengan jelas
+Melalui simulasi, metrik seperti waiting time, turnaround time, response time, dan CPU utilization dapat dihitung dan dianalisis secara akurat.
+
+   6. Mendukung analisis berbagai skenario ekstrem
+Kondisi ekstrem (beban sangat tinggi, banyak proses bersamaan) sulit direalisasikan pada sistem nyata, tetapi mudah diuji melalui simulasi.
+.
+
+2.Apa perbedaan hasil simulasi dengan perhitungan manual jika dataset besar? 
+
+Pada dataset yang berukuran besar, perbedaan antara hasil simulasi dan perhitungan manual menjadi semakin jelas, terutama dari segi ketelitian, efisiensi, dan keandalan hasil. Perhitungan manual pada jumlah data yang banyak sangat rentan terhadap kesalahan manusia, seperti salah menjumlahkan waktu, keliru menentukan urutan proses, atau tidak konsisten dalam menerapkan aturan algoritma scheduling. Kesalahan kecil ini dapat berdampak besar pada hasil akhir, sehingga akurasi perhitungan manual sulit dipertahankan ketika kompleksitas data meningkat.
+
+Sebaliknya, simulasi dilakukan menggunakan program komputer yang mampu memproses dataset besar secara sistematis dan konsisten sesuai dengan algoritma yang diterapkan. Simulasi dapat menghitung berbagai metrik kinerja, seperti waiting time, turnaround time, dan response time untuk seluruh proses dengan cepat dan tepat. Selain itu, simulasi juga memungkinkan pengujian berbagai skenario yang kompleks—misalnya perubahan jumlah proses, variasi waktu kedatangan, atau perbedaan prioritas—yang hampir tidak mungkin dilakukan secara manual dalam waktu yang wajar.
+
 3. Algoritma mana yang lebih mudah diimplementasikan? Jelaskan.
 
-Algoritma yang paling mudah diimplementasikan adalah First Come First Served (FCFS). Hal ini karena FCFS hanya membutuhkan satu antrian berdasarkan urutan kedatangan proses, tanpa perhitungan tambahan seperti prioritas atau time quantum. Logikanya sederhana dan mudah dipahami, sehingga sering digunakan sebagai algoritma dasar untuk pembelajaran, meskipun dari sisi performa tidak selalu optimal.
+Algoritma scheduling yang paling mudah diimplementasikan adalah First Come First Served (FCFS). Hal ini karena FCFS bekerja dengan prinsip yang sangat sederhana, yaitu proses yang pertama kali datang akan dilayani terlebih dahulu tanpa mempertimbangkan waktu eksekusi, prioritas, atau faktor lainnya. Implementasinya cukup menggunakan satu antrian (queue) dan mengeksekusi proses secara berurutan sesuai urutan kedatangan, sehingga logika programnya mudah dipahami dan tidak memerlukan struktur data atau perhitungan yang kompleks.
 
+Dibandingkan dengan algoritma lain seperti Shortest Job First (SJF), Priority Scheduling, atau Round Robin, FCFS tidak memerlukan proses pemilihan ulang (selection) atau pengurutan proses berdasarkan kriteria tertentu. SJF dan Priority membutuhkan perbandingan antar proses, sedangkan Round Robin memerlukan pengaturan time quantum dan mekanisme context switching yang lebih rumit. Oleh karena itu, dari segi konsep, logika, dan implementasi teknis, FCFS merupakan algoritma scheduling yang paling mudah untuk diterapkan, terutama bagi pemula atau untuk tujuan pembelajaran dasar sistem operasi.
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
+Bagian yang paling menantang pada praktikum ini adalah memahami alur kerja algoritma penjadwalan CPU serta menghubungkan konsep teoritis seperti arrival time, burst time, waiting time, dan turnaround time ke dalam bentuk program simulasi. Selain itu, memastikan hasil simulasi sesuai dengan perhitungan manual juga memerlukan ketelitian.
+
 - Bagaimana cara Anda mengatasinya?  
+Cara mengatasinya adalah dengan mempelajari kembali materi penjadwalan CPU, mengerjakan perhitungan manual terlebih dahulu, lalu membandingkannya secara bertahap dengan hasil program. Dengan melakukan pengujian berulang dan mengecek setiap tahapan perhitungan, kesalahan dapat diminimalkan dan pemahaman terhadap algoritma FCFS menjadi lebih baik.
 
 ---
 
