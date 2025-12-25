@@ -1,10 +1,11 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu V
+Topik: Scheduling fcfs dan sjf
 
 ---
 
 ## Identitas
+<<<<<<< HEAD
 - **Nama**  : Faik Setyawan
 - **NIM**   : 250202936
 - **Kelas** : 1IKRA
@@ -12,15 +13,30 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 
 ## Tujuan
 MahasiSetelah menyelesaikan tugas ini, mahasiswa mampu:
+=======
+- **Nama**  : Evelin Natalie  
+- **NIM**   : 250202916
+- **Kelas** : 1IKRA
+
+---
+
+## Tujuan
+Setelah menyelesaikan tugas ini, mahasiswa mampu:
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 1. Menghitung *waiting time* dan *turnaround time* untuk algoritma FCFS dan SJF.  
 2. Menyajikan hasil perhitungan dalam tabel yang rapi dan mudah dibaca.  
 3. Membandingkan performa FCFS dan SJF berdasarkan hasil analisis.  
 4. Menjelaskan kelebihan dan kekurangan masing-masing algoritma.  
+<<<<<<< HEAD
 5. Menyimpulkan kapan algoritma FCFS atau SJF lebih sesuai digunakan. swa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+=======
+5. Menyimpulkan kapan algoritma FCFS atau SJF lebih sesuai digunakan.  
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 ---
 
 ## Dasar Teori
+<<<<<<< HEAD
 1. Pengertian Scheduling
 
 Scheduling (penjadwalan) adalah mekanisme sistem operasi untuk menentukan urutan eksekusi proses di CPU agar sumber daya digunakan secara efisien.
@@ -56,6 +72,31 @@ SJF: efisien secara waktu rata-rata, namun kurang adil terhadap proses besar.
 5. Tujuan Akhir Scheduling
 
 Menyeimbangkan antara efisiensi CPU, respons cepat, dan keadilan antar proses, tergantung pada kebijakan dan kebutuhan sistem.
+=======
+1. FCFS (First Come First Served)
+
+   - Konsep dasar: Proses yang datang lebih dulu akan dieksekusi lebih dulu, seperti antrian di loket — prinsipnya first in, first out (FIFO).
+
+   - Sederhana & mudah diimplementasikan, karena proses dijadwalkan berdasarkan urutan waktu kedatangan (arrival time).
+
+   - Tidak adil untuk proses pendek, karena proses dengan burst time kecil bisa menunggu lama di belakang proses besar (convoy effect).
+
+   - Tidak preemptive, artinya proses yang sedang berjalan tidak bisa dihentikan sampai selesai.
+
+   - Kinerja baik untuk beban kerja seragam, tapi kurang efisien untuk campuran proses panjang dan pendek.
+
+2. SJF (Shortest Job First)
+
+   - Konsep dasar: Proses dengan waktu eksekusi (burst time) paling pendek dieksekusi lebih dulu untuk meminimalkan waktu tunggu rata-rata.
+
+   -  Tujuan utama: Menghasilkan rata-rata waiting time dan turnaround time paling kecil dibanding FCFS.
+
+   - Dapat bersifat non-preemptive (sekali jalan sampai selesai) atau preemptive (dikenal sebagai Shortest Remaining Time First).
+
+   - Butuh prediksi burst time, sehingga implementasinya sulit pada sistem nyata tanpa informasi tambahan.
+
+   - Optimal secara teori, tetapi bisa menyebabkan starvation bagi proses panjang jika banyak proses pendek datang terus-menerus.
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 ---
 
@@ -159,11 +200,15 @@ Gantt Chart:
 ---
 
 ## Hasil Eksekusi
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 ---
 
 ## Analisis
+<<<<<<< HEAD
 - Bandingkan hasil rata-rata WT dan TAT antara FCFS & SJF.  
 - Jelaskan kondisi kapan SJF lebih unggul dari FCFS dan sebaliknya.  
 - Tambahkan kesimpulan singkat di akhir laporan. 
@@ -171,15 +216,28 @@ Gantt Chart:
 **JAWABAN**
 
 RATA RATA  FCFS 
+=======
+   1. Bandingkan hasil rata-rata WT dan TAT antara FCFS & SJF.  
+   2. Jelaskan kondisi kapan SJF lebih unggul dari FCFS dan sebaliknya.  
+   3. Tambahkan kesimpulan singkat di akhir laporan. 
+
+**JAWBAN**
+ 
+1. RATA RATA  FCFS 
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 - rata-rata Waiting Time (WT) = 8,75
 - rata-rata Turnaround Time (TAT) = 14,75
 
 RATA RATA FJS
 - rata-rata Waiting Time (WT) = 8,5
 - rata-rata Turnaround Time (TAT) = 14,5
+<<<<<<< HEAD
 
 
 SJF lebih unggul dari FCFS ketika:
+=======
+2. - SJF lebih unggul dari FCFS ketika:
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 - Waktu eksekusi (burst time) setiap proses sudah diketahui atau dapat diperkirakan dengan baik.
 Karena SJF memilih proses dengan waktu terpendek, algoritma ini dapat meminimalkan waktu tunggu rata-rata dan meningkatkan efisiensi CPU.
@@ -190,8 +248,12 @@ Dalam kondisi ini, SJF mampu menyelesaikan proses-proses kecil dengan cepat, seh
 - Lingkungan sistem bersifat batch (non-interaktif).
 Pada sistem batch, semua proses sudah diketahui di awal, sehingga mudah menentukan urutan yang paling efisien dengan SJF.
 
+<<<<<<< HEAD
 
 FCFS lebih unggul dari SJF ketika:
+=======
+   - FCFS lebih unggul dari SJF ketika:
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 - Waktu kedatangan proses tidak dapat diprediksi dan burst time sulit diketahui.
 FCFS tidak memerlukan perkiraan waktu eksekusi, jadi lebih sederhana dan mudah diterapkan dalam kondisi nyata.
@@ -201,6 +263,7 @@ Dalam sistem seperti ini, FCFS lebih adil karena setiap proses dilayani berdasar
 
 - Tujuan utama adalah keadilan, bukan efisiensi.
 FCFS memastikan semua proses mendapat giliran secara berurutan, sehingga tidak terjadi starvation seperti pada SJF.
+<<<<<<< HEAD
 
 
 
@@ -208,14 +271,30 @@ FCFS memastikan semua proses mendapat giliran secara berurutan, sehingga tidak t
 
 
 
+=======
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 ---
 
 ## Kesimpulan
+<<<<<<< HEAD
 - FCFS (First Come First Served) menjalankan proses berdasarkan urutan kedatangan — proses yang datang lebih dulu akan dijalankan lebih dulu. Metode ini sederhana namun dapat menyebabkan waktu tunggu tinggi bagi proses yang datang belakangan (efek convoy).
 
 - SJF (Shortest Job First) memprioritaskan proses dengan waktu eksekusi terpendek, sehingga menghasilkan rata-rata waktu tunggu paling kecil dibanding FCFS.
 
+=======
+- FCFS
+
+Proses dieksekusi berdasarkan urutan kedatangan, sehingga sederhana dan mudah diterapkan.
+Dapat menyebabkan waktu tunggu rata-rata tinggi jika proses panjang datang lebih dulu (convoy effect).
+Lebih menekankan keadilan waktu datang, bukan efisiensi waktu eksekusi.
+
+-SJF
+
+Menjalankan proses dengan burst time paling pendek terlebih dahulu, sehingga menghasilkan rata-rata waktu tunggu minimum.
+Lebih efisien dibanding FCFS, tetapi sulit diterapkan karena memerlukan perkiraan waktu eksekusi yang akurat.
+Dapat menyebabkan starvation bagi proses panjang jika proses pendek terus datang.
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 ---
 
@@ -229,6 +308,7 @@ FCFS memastikan semua proses mendapat giliran secara berurutan, sehingga tidak t
 **JAWABAN**
 
 1. 
+<<<<<<< HEAD
 ![Screenshot hasil](<screenshots/FCFS dan SJF.png>)
 
 2.    
@@ -266,6 +346,55 @@ Kelemahan:
 - Dapat menyebabkan starvation untuk proses yang panjang.
 - Tidak cocok untuk sistem waktu nyata (real-time) yang memerlukan respon cepat untuk semua proses.
 
+=======
+
+<img width="1364" height="761" alt="SKENARIO FCFS dan SJF" src="https://github.com/user-attachments/assets/f520b504-3458-4878-836f-b6d6775a0440" />
+
+
+2. 
+
+| Algoritma | Avg Waiting Time | Avg Turnaround Time | Kelebihan | Kekurangan |
+|------------|------------------|----------------------|------------|-------------|
+| FCFS | 8,75 | 14,75 | Sederhana dan mudah diterapkan | Tidak efisien untuk proses panjang |
+| SJF | 8,5 | 14,5 | Optimal untuk job pendek | Menyebabkan *starvation* pada job panjang |
+
+
+3. 1.FCFS (First Come First Served)
+
+Kelebihan:
+
+- Mudah dan sederhana — implementasi paling mudah karena cukup mengikuti urutan kedatangan proses.
+
+- Tidak memerlukan prediksi waktu eksekusi — sistem cukup tahu kapan proses datang.
+
+- Adil secara urutan waktu — setiap proses dilayani sesuai antrian (tidak ada yang diserobot).
+
+Kelemahan:
+
+- Waktu tunggu bisa besar untuk proses pendek yang berada di belakang proses panjang (convoy effect).
+
+- Kurang efisien bila terdapat variasi besar pada waktu eksekusi proses.
+
+- Tidak cocok untuk sistem interaktif karena bisa menimbulkan respon yang lambat.
+
+ 2.SJF (Shortest Job First)
+
+Kelebihan:
+
+- Rata-rata waiting time paling rendah dibanding FCFS, karena proses pendek dikerjakan lebih dulu.
+
+- Efisien untuk sistem batch, di mana waktu eksekusi tiap proses sudah diketahui.
+
+- Meningkatkan throughput sistem (lebih banyak proses selesai dalam waktu singkat).
+
+Kelemahan:
+
+- Sulit diterapkan di dunia nyata, karena waktu eksekusi (burst time) biasanya tidak diketahui sebelumnya.
+
+- Dapat menyebabkan starvation — proses panjang bisa tertunda terus jika proses pendek terus datang.
+
+- Kurang fleksibel untuk sistem real-time yang memerlukan prioritas dinamis.
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 
 ### Quiz
@@ -274,6 +403,7 @@ Tuliskan jawaban di bagian **Quiz** pada laporan:
 2. Mengapa SJF dapat menghasilkan rata-rata waktu tunggu minimum?  
 3. Apa kelemahan SJF jika diterapkan pada sistem interaktif?  
 
+<<<<<<< HEAD
 **jawaban**
 
 (1). Berikut perbedaan utama antara FCFS dan SJF dalam teori CPU Scheduling:
@@ -324,14 +454,26 @@ Sistem interaktif memerlukan respons cepat. Karena SJF fokus pada efisiensi wakt
 
 - Overhead dalam perhitungan dan penjadwalan
 Untuk menentukan proses terpendek setiap saat, sistem harus memonitor dan memperkirakan waktu eksekusi secara terus-menerus, menambah beban kerja CPU (scheduling overhead).
+=======
+
+**JAWABAN**
+1. FCFS (First Come First Served) adalah algoritma penjadwalan CPU yang mengeksekusi proses berdasarkan urutan kedatangannya. Artinya, proses yang datang lebih dulu akan dieksekusi lebih dulu juga. Konsepnya seperti antrian di kasir — siapa datang dulu, dilayani dulu. Algoritma ini sangat sederhana dan mudah diterapkan, tetapi memiliki kelemahan yaitu convoy effect, di mana proses dengan waktu eksekusi (burst time) pendek harus menunggu proses panjang selesai terlebih dahulu. Akibatnya, waktu tunggu rata-rata bisa menjadi lama.
+
+- SJF (Shortest Job First) adalah algoritma yang memilih proses dengan waktu eksekusi paling pendek untuk dijalankan terlebih dahulu. Tujuannya agar waktu tunggu rata-rata menjadi sekecil mungkin. SJF dapat berbentuk non-preemptive (proses tidak dapat diganggu sampai selesai) atau preemptive, yang dikenal sebagai SRTF (Shortest Remaining Time First) — di mana proses baru dengan waktu lebih pendek dapat menghentikan proses yang sedang berjalan.
+
+2. Algoritma SJF (Shortest Job First) mampu menghasilkan rata-rata waktu tunggu minimum karena selalu mengeksekusi proses dengan waktu eksekusi (burst time) paling pendek terlebih dahulu. Dengan cara ini, proses-proses singkat dapat segera selesai tanpa harus menunggu proses panjang, sehingga total waktu tunggu seluruh proses menjadi lebih efisien. Pendekatan ini membuat SJF dianggap sebagai algoritma penjadwalan yang paling optimal dalam meminimalkan waktu tunggu rata-rata.
+
+3. Kelemahan SJF pada sistem interaktif adalah sulit menentukan burst time secara akurat, berisiko menyebabkan starvation pada proses panjang, dan membuat sistem kurang responsif terhadap permintaan pengguna. Karena itu, algoritma ini jarang digunakan pada sistem interaktif dan lebih cocok untuk sistem batch yang beban kerjanya sudah diketahui sebelumnya.
+
+
+>>>>>>> 8fe25f9a935a979f0fb4648bd07d8efa09ba7190
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
-
+- Apa bagian yang paling menantang minggu ini?   sulit Mencari nilai star time dan finis time pada FCFS dan SJF pada awal praktikum 
+- Bagaimana cara Anda mengatasinya? dengan cara  mencari materi di berbagai website dan Ai,kemudian saya mempelajari dan memahami materi yang saya cari di web site dan Ai .
 ---
 
 **Credit:**  

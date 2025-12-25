@@ -224,7 +224,7 @@ Penggunaan simulasi mempermudah analisis kinerja algoritma penjadwalan CPU, teru
 
 ---
 
-## Quiz danS Tugas
+## Quiz dan Tugas
 ### Tugas
 1. Buat program simulasi FCFS atau SJF.  
 2. Jalankan program dengan dataset uji.  
