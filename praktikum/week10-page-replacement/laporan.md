@@ -1,7 +1,6 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
-
+# Laporan Praktikum Minggu X
+Topik: Manajemen Memori – Page Replacement (FIFO & LRU)
 ---
 
 ## Identitas
@@ -70,7 +69,7 @@ FIFO lebih sederhana namun kurang efisien, sedangkan LRU lebih kompleks tetapi m
    - Catat setiap *page hit* dan *page fault*.
    - Hitung total *page fault*.
 
-4. **Eksekusi & Validasi**
+    4. **Eksekusi & Validasi**
 
    - Jalankan program untuk FIFO dan LRU.
    - Pastikan hasil simulasi logis dan konsisten.
@@ -101,8 +100,10 @@ FIFO lebih sederhana namun kurang efisien, sedangkan LRU lebih kompleks tetapi m
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+
+![HASIL](screenshots/FIFO.PNG)
+
+![HASIL](screenshots/LRU.PNG)
 
 ---
 
