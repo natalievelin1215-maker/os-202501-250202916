@@ -79,9 +79,9 @@ FIFO lebih sederhana namun kurang efisien, sedangkan LRU lebih kompleks tetapi m
 
    Buat tabel perbandingan seperti berikut:
 
-| Algoritma | Jumlah Page Fault | Keterangan      |
-| :-------- | :---------------: | :----------------------------------------------------------------------------------------------- |
-| FIFO      |         10        | Implementasi sederhana, tetapi kurang efisien karena tidak memperhatikan pola penggunaan halaman |
+| Algoritma | Jumlah Page Fault | Keterangan |
+| :-------- | :---------------: | :---------- |
+| FIFO | 10 | Implementasi sederhana, tetapi kurang efisien karena tidak memperhatikan pola penggunaan halaman |
 | LRU       |         9         | Lebih efisien karena mempertahankan halaman yang sering digunakan                                |
 
 
@@ -115,11 +115,35 @@ LRU
 | :-------- | :---------------: | :----------------------------------------------------------------------------------------------- |
 | FIFO      |         10        | Implementasi sederhana, tetapi kurang efisien karena tidak memperhatikan pola penggunaan halaman |
 | LRU       |         9         | Lebih efisien karena mempertahankan halaman yang sering digunakan                                |
-
-
-
    - Jelaskan mengapa jumlah *page fault* bisa berbeda.
+
+Perbedaan jumlah page fault terjadi karena kebijakan penggantian halaman yang digunakan oleh masing-masing algoritma berbeda:
+
+1. FIFO (First In First Out)
+FIFO mengganti halaman yang paling awal masuk ke frame, tanpa memperhatikan apakah halaman tersebut masih sering digunakan atau tidak. Akibatnya, halaman yang sebenarnya masih dibutuhkan dapat terhapus lebih awal. Hal ini menyebabkan terjadinya page fault tambahan ketika halaman tersebut diakses kembali.
+
+2. LRU (Least Recently Used)
+LRU mengganti halaman yang paling lama tidak digunakan, dengan asumsi bahwa halaman yang baru saja digunakan kemungkinan besar akan digunakan kembali dalam waktu dekat (temporal locality). Pendekatan ini membuat LRU lebih mampu mempertahankan halaman yang relevan di dalam memori, sehingga dapat mengurangi jumlah page fault.
+
    - Analisis algoritma mana yang lebih efisien dan alasannya.
+
+Berdasarkan hasil simulasi:
+
+| Algoritma	| Page Hit | Page Fault |
+| --------- | -------- | ---------- |
+| FIFO |	3 | 10 |
+| LRU	| 4 |	9 |
+
+LRU lebih efisien dibandingkan FIFO pada kasus ini, dengan alasan:
+
+Jumlah page fault lebih sedikit
+LRU menghasilkan 9 page fault, sedangkan FIFO menghasilkan 10. Semakin sedikit page fault, semakin kecil overhead akses ke memori sekunder.
+
+Memanfaatkan pola akses program
+LRU memanfaatkan prinsip locality of reference, sehingga halaman yang sering atau baru digunakan tetap berada di memori lebih lama.
+
+Kinerja sistem lebih baik
+Lebih sedikit page fault berarti lebih sedikit operasi I/O disk, yang secara langsung meningkatkan performa sistem.
 
 ---
 
