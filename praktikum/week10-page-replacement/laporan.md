@@ -5,21 +5,38 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Evelin Natalie
+- **NIM**   : 250202916  
+- **Kelas** : 1IKRA
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Setelah menyelesaikan tugas ini, mahasiswa mampu:
+1. Mengimplementasikan algoritma page replacement FIFO dalam program.
+2. Mengimplementasikan algoritma page replacement LRU dalam program.
+3. Menjalankan simulasi page replacement dengan dataset tertentu.
+4. Membandingkan performa FIFO dan LRU berdasarkan jumlah *page fault*.
+5. Menyajikan hasil simulasi dalam laporan yang sistematis.
+
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+Manajemen Memori dan Virtual Memory
+Manajemen memori adalah bagian dari sistem operasi yang bertugas mengatur penggunaan memori utama (RAM). Dalam konsep virtual memory, program dapat dijalankan meskipun ukuran program lebih besar dari kapasitas RAM dengan memanfaatkan media penyimpanan sekunder. Data dibagi menjadi unit kecil yang disebut page, dan hanya page yang dibutuhkan saja yang dimuat ke memori.
+
+Page Fault dan Page Replacement
+Page fault terjadi ketika page yang dibutuhkan proses tidak berada di memori utama. Jika memori penuh, sistem operasi harus mengganti salah satu page yang ada dengan page baru. Proses pemilihan page yang akan dikeluarkan disebut page replacement, dan tujuannya adalah meminimalkan jumlah page fault agar kinerja sistem tetap optimal.
+
+Algoritma FIFO (First In First Out)
+FIFO mengganti page yang pertama kali masuk ke memori tanpa memperhatikan apakah page tersebut masih sering digunakan atau tidak. Algoritma ini sederhana dan mudah diimplementasikan, namun kelemahannya adalah dapat menghapus page yang masih dibutuhkan sehingga berpotensi meningkatkan jumlah page fault.
+
+Algoritma LRU (Least Recently Used)
+LRU mengganti page yang paling lama tidak digunakan dengan asumsi bahwa page yang jarang digunakan di masa lalu kecil kemungkinan akan digunakan kembali dalam waktu dekat. Algoritma ini umumnya menghasilkan performa lebih baik dibanding FIFO, tetapi membutuhkan mekanisme tambahan untuk mencatat riwayat penggunaan page.
+
+Perbandingan FIFO dan LRU
+FIFO lebih sederhana namun kurang efisien, sedangkan LRU lebih kompleks tetapi mampu mengurangi jumlah page fault. Pemilihan algoritma page replacement harus mempertimbangkan keseimbangan antara kompleksitas implementasi dan kinerja sistem secara keseluruhan.
 
 ---
 
@@ -32,12 +49,54 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
-```bash
-uname -a
-lsmod | head
-dmesg | head
-```
+## D. Langkah Pengerjaan
+1. **Menyiapkan Dataset**
+
+   Gunakan *reference string* berikut sebagai contoh:
+   ```
+   7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2
+   ```
+   Jumlah frame memori: **3 frame**.
+
+2. **Implementasi FIFO**
+
+   - Simulasikan penggantian halaman menggunakan algoritma FIFO.
+   - Catat setiap *page hit* dan *page fault*.
+   - Hitung total *page fault*.
+
+3. **Implementasi LRU**
+
+   - Simulasikan penggantian halaman menggunakan algoritma LRU.
+   - Catat setiap *page hit* dan *page fault*.
+   - Hitung total *page fault*.
+
+4. **Eksekusi & Validasi**
+
+   - Jalankan program untuk FIFO dan LRU.
+   - Pastikan hasil simulasi logis dan konsisten.
+   - Simpan screenshot hasil eksekusi.
+
+5. **Analisis Perbandingan**
+
+   Buat tabel perbandingan seperti berikut:
+
+| Algoritma | Jumlah Page Fault | Keterangan      |
+| :-------- | :---------------: | :----------------------------------------------------------------------------------------------- |
+| FIFO      |         10        | Implementasi sederhana, tetapi kurang efisien karena tidak memperhatikan pola penggunaan halaman |
+| LRU       |         9         | Lebih efisien karena mempertahankan halaman yang sering digunakan                                |
+
+
+
+   - Jelaskan mengapa jumlah *page fault* bisa berbeda.
+   - Analisis algoritma mana yang lebih efisien dan alasannya.
+
+6. **Commit & Push**
+
+   ```bash
+   git add .
+   git commit -m "Minggu 10 - Page Replacement FIFO & LRU"
+   git push origin main
+   ```
 
 ---
 
@@ -48,24 +107,40 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+   Buat tabel perbandingan seperti berikut:
+
+| Algoritma | Jumlah Page Fault | Keterangan      |
+| :-------- | :---------------: | :----------------------------------------------------------------------------------------------- |
+| FIFO      |         10        | Implementasi sederhana, tetapi kurang efisien karena tidak memperhatikan pola penggunaan halaman |
+| LRU       |         9         | Lebih efisien karena mempertahankan halaman yang sering digunakan                                |
+
+
+
+   - Jelaskan mengapa jumlah *page fault* bisa berbeda.
+   - Analisis algoritma mana yang lebih efisien dan alasannya.
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+Algoritma page replacement FIFO dan LRU dapat diimplementasikan untuk mensimulasikan mekanisme penggantian halaman pada sistem operasi, dengan tujuan mengelola memori secara efektif dan meminimalkan terjadinya page fault.
 
+Berdasarkan hasil simulasi, algoritma LRU menghasilkan jumlah page fault yang lebih sedikit dibandingkan FIFO, karena LRU mempertimbangkan riwayat penggunaan halaman sehingga lebih sesuai dengan pola akses memori program.
+
+Algoritma FIFO memiliki implementasi yang lebih sederhana, namun kurang efisien dibandingkan LRU karena tidak memperhatikan frekuensi dan waktu penggunaan halaman, sehingga dapat menurunkan performa sistem secara keseluruhan.
 ---
 
-## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+## E. Tugas & Quiz
+### Tugas
+1. Buat program simulasi page replacement FIFO dan LRU.
+2. Jalankan simulasi dengan dataset uji.
+3. Sajikan hasil simulasi dalam tabel atau grafik.
+4. Tulis laporan praktikum pada `laporan.md`.
+
+### Quiz
+Jawab pada bagian **Quiz** di laporan:
+1. Apa perbedaan utama FIFO dan LRU?
+2. Mengapa FIFO dapat menghasilkan *Belady’s Anomaly*?
+3. Mengapa LRU umumnya menghasilkan performa lebih baik dibanding FIFO?
 
 ---
 
