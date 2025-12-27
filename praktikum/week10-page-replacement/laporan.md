@@ -166,8 +166,16 @@ Algoritma FIFO memiliki implementasi yang lebih sederhana, namun kurang efisien 
 ### Quiz
 Jawab pada bagian **Quiz** di laporan:
 1. Apa perbedaan utama FIFO dan LRU?
+
+terletak pada cara pemilihan halaman yang akan diganti. FIFO mengganti halaman yang pertama kali masuk ke memori tanpa mempertimbangkan apakah halaman tersebut masih sering digunakan atau tidak. Sebaliknya, LRU mengganti halaman yang paling lama tidak digunakan dengan mempertimbangkan riwayat akses halaman, sehingga lebih mencerminkan pola penggunaan memori oleh program.
+
 2. Mengapa FIFO dapat menghasilkan *Belady’s Anomaly*?
+
+FIFO dapat menghasilkan Belady’s Anomaly karena algoritma ini tidak memperhatikan pola akses halaman. Halaman yang sering digunakan bisa saja diganti hanya karena halaman tersebut masuk lebih awal ke dalam memori. Ketika jumlah frame ditambah, urutan halaman yang dikeluarkan dapat berubah sehingga justru meningkatkan jumlah page fault, meskipun kapasitas memori lebih besar.
+
 3. Mengapa LRU umumnya menghasilkan performa lebih baik dibanding FIFO?
+
+LRU umumnya menghasilkan performa yang lebih baik dibanding FIFO karena mengikuti prinsip locality of reference, yaitu halaman yang baru saja diakses memiliki kemungkinan besar untuk diakses kembali. Dengan mengganti halaman yang paling lama tidak digunakan, LRU lebih tepat dalam memilih halaman yang dikeluarkan dari memori dan tidak mengalami Belady’s Anomaly, sehingga jumlah page fault cenderung lebih sedikit.
 
 ---
 
