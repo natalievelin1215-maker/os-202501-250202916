@@ -100,9 +100,10 @@ FIFO lebih sederhana namun kurang efisien, sedangkan LRU lebih kompleks tetapi m
 ---
 
 ## Hasil Eksekusi
-
+FIFO
 ![HASIL](screenshots/FIFO.PNG)
 
+LRU
 ![HASIL](screenshots/LRU.PNG)
 
 ---
