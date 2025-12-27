@@ -153,6 +153,7 @@ Algoritma page replacement FIFO dan LRU dapat diimplementasikan untuk mensimulas
 Berdasarkan hasil simulasi, algoritma LRU menghasilkan jumlah page fault yang lebih sedikit dibandingkan FIFO, karena LRU mempertimbangkan riwayat penggunaan halaman sehingga lebih sesuai dengan pola akses memori program.
 
 Algoritma FIFO memiliki implementasi yang lebih sederhana, namun kurang efisien dibandingkan LRU karena tidak memperhatikan frekuensi dan waktu penggunaan halaman, sehingga dapat menurunkan performa sistem secara keseluruhan.
+
 ---
 
 ## E. Tugas & Quiz
