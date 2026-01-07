@@ -48,73 +48,77 @@ FIFO lebih sederhana namun kurang efisien, sedangkan LRU lebih kompleks tetapi m
 ---
 
 ## Kode / Perintah
-## D. Langkah Pengerjaan
-1. **Menyiapkan Dataset**
 
-   Gunakan *reference string* berikut sebagai contoh:
-   ```
-   7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2
-   ```
-   Jumlah frame memori: **3 frame**.
-
-2. **Implementasi FIFO**
-
-   - Simulasikan penggantian halaman menggunakan algoritma FIFO.
-   - Catat setiap *page hit* dan *page fault*.
-   - Hitung total *page fault*.
-
-3. **Implementasi LRU**
-
-   - Simulasikan penggantian halaman menggunakan algoritma LRU.
-   - Catat setiap *page hit* dan *page fault*.
-   - Hitung total *page fault*.
-
-    4. **Eksekusi & Validasi**
-
-   - Jalankan program untuk FIFO dan LRU.
-   - Pastikan hasil simulasi logis dan konsisten.
-   - Simpan screenshot hasil eksekusi.
-
-5. **Analisis Perbandingan**
-
-   Buat tabel perbandingan seperti berikut:
-
-| Algoritma | Jumlah Page Fault | Keterangan |
-| :-------- | :---------------: | :---------- |
-| FIFO | 10 | Implementasi sederhana, tetapi kurang efisien karena tidak memperhatikan pola penggunaan halaman |
-| LRU       |         9         | Lebih efisien karena mempertahankan halaman yang sering digunakan                                |
-
-
-
-   - Jelaskan mengapa jumlah *page fault* bisa berbeda.
-   - Analisis algoritma mana yang lebih efisien dan alasannya.
-
-6. **Commit & Push**
-
-   ```bash
-   git add .
-   git commit -m "Minggu 10 - Page Replacement FIFO & LRU"
-   git push origin main
-   ```
 
 ---
 
 ## Hasil Eksekusi
-FIFO
-![HASIL](screenshots/FIFO.PNG)
+```
+import os
 
-LRU
-![HASIL](screenshots/LRU.PNG)
+def fifo_page_replacement(reference_string, frames_count):
+    frames = []
+    page_faults = 0
+    page_hits = 0
 
+    print("=== FIFO Page Replacement ===")
+    for page in reference_string:
+        if page in frames:
+            page_hits += 1
+            print("Page", page, "= HIT | Frame:", frames)
+        else:
+            page_faults += 1
+            if len(frames) < frames_count:
+                frames.append(page)
+            else:
+                frames.pop(0)
+                frames.append(page)
+            print("Page", page, "= FAULT | Frame:", frames)
+
+    print("Total Page Fault (FIFO):", page_faults)
+    print("Total Page Hit (FIFO):", page_hits)
+    print()
+
+
+def lru_page_replacement(reference_string, frames_count):
+    frames = []
+    page_faults = 0
+    page_hits = 0
+
+    print("=== LRU Page Replacement ===")
+    for page in reference_string:
+        if page in frames:
+            page_hits += 1
+            frames.remove(page)
+            frames.append(page)
+            print("Page", page, "= HIT | Frame:", frames)
+        else:
+            page_faults += 1
+            if len(frames) < frames_count:
+                frames.append(page)
+            else:
+                frames.pop(0)
+                frames.append(page)
+            print("Page", page, "= FAULT | Frame:", frames)
+
+    print("Total Page Fault (LRU):", page_faults)
+    print("Total Page Hit (LRU):", page_hits)
+    print()
+
+
+def read_reference_string(file_path):
+    with open(file_path, "r") as file:
+        return [int(x.strip()) for x in file.read().split(",")]
+```
 ---
 
 ## Analisis
    Buat tabel perbandingan seperti berikut:
 
-| Algoritma | Jumlah Page Fault | Keterangan      |
-| :-------- | :---------------: | :----------------------------------------------------------------------------------------------- |
-| FIFO      |         10        | Implementasi sederhana, tetapi kurang efisien karena tidak memperhatikan pola penggunaan halaman |
-| LRU       |         9         | Lebih efisien karena mempertahankan halaman yang sering digunakan                                |
+| Algoritma | Jumlah Page Fault | Keterangan |
+| :-------- | :---------------: | :--------: |
+| FIFO | 10 | Implementasi sederhana, tetapi kurang efisien karena tidak memperhatikan pola penggunaan halaman |
+| LRU | 9 | Lebih efisien karena mempertahankan halaman yang sering digunakan |
    - Jelaskan mengapa jumlah *page fault* bisa berbeda.
 
 Perbedaan jumlah page fault terjadi karena kebijakan penggantian halaman yang digunakan oleh masing-masing algoritma berbeda:
