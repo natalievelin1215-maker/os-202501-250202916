@@ -110,6 +110,12 @@ def read_reference_string(file_path):
 
 ## Hasil Eksekusi
 
+![alt text](screenshots/page_replacement1.PNG)
+
+![alt text](screenshots/page_replacement2.PNG)
+
+![alt text](screenshots/output_page_replacement.PNG)
+
 ---
 
 ## Analisis
