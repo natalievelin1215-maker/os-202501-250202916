@@ -48,11 +48,6 @@ FIFO lebih sederhana namun kurang efisien, sedangkan LRU lebih kompleks tetapi m
 ---
 
 ## Kode / Perintah
-
-
----
-
-## Hasil Eksekusi
 ```
 import os
 
@@ -110,6 +105,11 @@ def read_reference_string(file_path):
     with open(file_path, "r") as file:
         return [int(x.strip()) for x in file.read().split(",")]
 ```
+
+---
+
+## Hasil Eksekusi
+
 ---
 
 ## Analisis
