@@ -60,7 +60,7 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
+1. ecdaiugwaxawysfxbu
    **Jawaban:**  
 2. [Pertanyaan 2]  
    **Jawaban:**  
