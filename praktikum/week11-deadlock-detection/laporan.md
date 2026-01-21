@@ -157,11 +157,11 @@ def deadlock_processes(graph):
 
 Pada dataset uji, setiap proses memegang satu resource dan secara bersamaan meminta resource lain yang sedang dipegang oleh proses berbeda. Kondisi ini menyebabkan proses saling menunggu tanpa adanya proses yang dapat melanjutkan eksekusi. Secara spesifik:
 
-Proses P1 menunggu resource yang dialokasikan ke P2.
+- Proses P1 menunggu resource yang dialokasikan ke P2.
 
-Proses P2 menunggu resource yang dialokasikan ke P3.
+- Proses P2 menunggu resource yang dialokasikan ke P3.
 
-Proses P3 menunggu resource yang dialokasikan ke P1.
+- Proses P3 menunggu resource yang dialokasikan ke P1.
 
 Keadaan tersebut membentuk siklus tertutup, sehingga memenuhi indikator utama terjadinya deadlock. Program berhasil mendeteksi siklus ini melalui algoritma pencarian cycle pada wait-for graph, sehingga proses-proses yang terlibat diklasifikasikan sebagai proses deadlock.
 
