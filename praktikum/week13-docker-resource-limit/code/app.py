@@ -1,25 +1,21 @@
 import time
 
-data = [500]
+data = []
+i = 0
 
-print("=== UJI RESOURCE LIMIT DOCKER ===")
+print("=== PRAKTIKUM DOCKER RESOURCE LIMIT ===")
 
 try:
-    i = 0
     while True:
         i += 1
-
-        # Bebani CPU
+        # Beban CPU
         x = i * i * i
 
         # Alokasi memori bertahap (1 MB)
         data.append("X" * 1024 * 1024)
 
         print(f"Iterasi: {i} | Memori terpakai: {len(data)} MB")
-        time.sleep(0.1)
+        time.sleep(0.2)
 
 except MemoryError:
     print("ERROR: Memori tidak mencukupi!")
-
-except Exception as e:
-    print("Program dihentikan:", e)
