@@ -1,5 +1,6 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu 14
+Topik : Laporan Imrad
 
 
 ---
