@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+
 
 ---
 
@@ -126,16 +126,23 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ---
 
-## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+## Pembahasan (Discussion):
+Berdasarkan hasil pengujian, metode timeout mampu mendeteksi proses yang mengalami waktu tunggu berlebihan dan mengindikasikannya sebagai deadlock. Proses P2 terdeteksi deadlock karena waktu tunggunya melebihi batas timeout yang ditentukan.
+
+Kelebihan metode timeout adalah implementasinya yang sederhana dan tidak memerlukan struktur data kompleks seperti resource allocation graph. Namun, metode ini memiliki kelemahan, yaitu kemungkinan terjadinya false positive, di mana proses yang hanya lambat dapat dianggap deadlock. Selain itu, penentuan nilai timeout yang tidak tepat dapat mempengaruhi akurasi deteksi.
+
+Hasil eksperimen ini sesuai dengan teori yang menyatakan bahwa deteksi deadlock berbasis timeout lebih cocok digunakan pada sistem sederhana atau sebagai solusi sementara (Tanenbaum, 2015).
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1. Deteksi deadlock berbasis timeout bekerja dengan mengamati waktu tunggu proses terhadap sumber daya.
 
+2. Proses yang melebihi batas waktu tunggu ditandai sebagai deadlock.
+
+3. Metode timeout mudah diimplementasikan tetapi kurang akurat untuk sistem berskala besar.
+
+4. Pemilihan nilai timeout sangat berpengaruh terhadap hasil deteksi deadlock.
 ---
 
 ## Quiz
